@@ -9,6 +9,7 @@
 \usepackage{etoolbox}
 \usepackage{setspace} 
 \usepackage{lipsum} 
+\graphicspath{ {./images/} }
 \setlength{\headsep}{30pt}
 \usepackage[inner=2cm,outer=2.5cm,top=2.5cm,bottom=2cm]{geometry} %margin
 % \pagestyle{empty}
@@ -35,7 +36,7 @@
 \newcommand{\@npm}{6181901041}
 \newcommand{\@judultopik}{Pembuatan Ulang Aplikasi Rugby Indonesia dengan Ionic 7 dan Capacitor} % Judul/topik anda
 \newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
-\newcommand{\tanggal}{01/01/1900}
+\newcommand{\tanggal}{22/09/2023}
 
 % Dokumen hasil template ini harus dicetak bolak-balik !!!!
 
@@ -44,69 +45,122 @@
 \pagenumbering{arabic}
 
 \section{Deskripsi}
-Tuliskan deskripsi dari topik skripsi yang akan anda ajukan. Di sini dapat dituliskan latar belakang, seperti apa penelitian yang sudah ada sebelumnya dan apa yang akan anda kerjakan. Sertakan gambar agar penjelasan anda menjadi lebih baik.
+Olahraga adalah aktivitas fisik yang dilakukan untuk menguatkan dan menyehatkan tubuh. Olahraga memiliki berbagai jenis dan tujuan, seperti meningkatkan kesehatan tubuh, meningkatkan daya tahan fisik, meningkatkan kebugaran, dan meningkatkan keterampilan dalam suatu cabang olahraga. Beberapa jenis olahraga yang populer antara lain sepak bola, berenang, tolak peluru, dan permainan bola besar. Olahraga dapat membantu menjaga berat badan ideal, membentuk dan menguatkan otot, baik untuk kesehatan jantung, meningkatkan tinggi badan, dan membuat tubuh rileks. Selain itu, olahraga juga dapat membantu meningkatkan kesehatan mental dan melepaskan tegangan otot atau sendi. Setiap jenis olahraga memiliki teknik dan peraturan yang berbeda-beda, seperti teknik dasar dalam olahraga tolak peluru dan aturan dalam permainan sepak bola.
 
-Pada skripsi ini, akan dibuat sebuah perangkat lunak yang dapat menampilkan visualisasi dan simulasi kerumunan orang yang berkunjung ke sebuah museum. Dengan menggunakan perangkat lunak tersebut, pengelola museum dapat mengatur tempat peletakan objek sehingga tidak terjadi kerumunan yang terlalu padat.
+Rugby adalah salah satu olahraga bola yang dimainkan oleh dua tim. Berdasarkan jumlah pemainnya, olahraga rugby terbagi menjadi 3 jenis utama, yaitu:
 
-Dari berbagai macam teknik yang dapat digunakan untuk melakukan simulasi kerumunan, dipilih dua buah teknik yaitu teknik {\it flow tiles} dan {\it social force model (steering behaviour)}.
+\begin{itemize}
+    \item Rugby union: setiap tim terdiri dari 15 pemain.
+    \item Liga rugby: setiap tim terdiri dari 13 pemain.
+    \item Rugby sevens: setiap terdiri dari 7 pemain.
+\end{itemize}
 
-Dst, dst, dst, \ldots\ldots\ldots 
+Masing-masing tim diharuskan untuk mencetak poin dengan menendang, melempar, membawa dan mendaratkan bola melewati gawang atau garis belakang tim lawan.
 
-Perangkat lunak akan dibuat dengan bantuan {\it framework} OpenSteer. Sebagai studi kasus, museum yang digunakan untuk melakukan simulasi adalah Museum Geologi Bandung.
+Bola yang digunakan pada olahraga rugby memiliki ciri khas, yaitu berbentuk lonjong dan mengerucut pada bagian ujungnya. Dengan bentuknya ini, bola rugby jadi lebih mudah dipegang dan dibawa oleh para pemain selama pertandingan berlangsung.
 
-Dst, dst, dst, \ldots\ldots\ldots 
+Sejarah permainan rugby dimulai dari kota Rugby, Inggris pada tahun 1823. Permainan tersebut dicetuskan oleh seorang pemuda bernama William Webb Ellis ketika bermain sepak bola dengan teman-temannya, William mengambil bola dan berlari menuju gawang tim lawan untuk mencetak skor. Seiring berjalannya waktu, rugby terus berkembang dan membentuk federasinya yang pertama, yaitu Rugby Football Union, pada tahun 1871. Keberhasilannya semakin mengukuhkan statusnya ketika rugby pertama kali dipertandingkan secara resmi dalam ajang turnamen olahraga internasional yaitu Olimpiade, pada tahun 1900. Meskipun sempat absen dari Olimpiade pada tahun 1924, rugby kembali sebagai cabang olahraga resmi dalam turnamen Olimpiade tahun 2016 dan tetap relevan hingga saat ini.
+
+Ionic Framework adalah toolkit UI open-source untuk membangun aplikasi modern, cross-platform yang berkualitas tinggi dari satu kode sumber dengan JavaScript dan web. Ionic menyediakan alat dan layanan untuk mengembangkan aplikasi hybrid mobile, desktop, dan progressive web berdasarkan teknologi dan praktik pengembangan web modern, menggunakan teknologi web seperti CSS, HTML5, dan Sass. Ionic 7 adalah versi \textit{stable release} terbaru dari Ionic, yang memperkenalkan cara kerja yang lebih efisien dengan kontrol formulir seperti Toggle atau Input. Komponen Item dan Label tidak lagi diperlukan, dan setiap kontrol formulir menangani konten label secara langsung. Selain itu, fitur tertentu seperti teks bantuan atau mode pengisian input telah dipindahkan dari ion-item ke kontrol formulir yang sesuai seperti ion-input, ion-textarea, dan ion-select. Perubahan ini mengurangi boilerplate kode dengan menghilangkan persyaratan ion-item dan ion-label. Komponen Ionic Framework secara otomatis menyesuaikan tampilan dan nuansa mereka dengan platform di mana mereka berjalan, memungkinkan gestur dan perilaku native yang sama dengan yang biasa digunakan pengguna. Ionic memiliki lebih dari 100 komponen UI yang telah dirancang sebelumnya, tipografi, dan tema dasar yang menyesuaikan dengan setiap platform. Ini dioptimalkan untuk mobile dengan animasi yang diakselerasi oleh hardware, lazy loading, dan scrolling 60FPS. Ionic CLI digunakan untuk membuat, membangun, dan menguji aplikasi serta memanfaatkan Live Reload, deployment, dan dokumen yang sangat baik.
+
+Capacitor adalah runtime native cross-platform yang memudahkan pembuatan aplikasi mobile yang performanya tinggi dan berjalan secara native di iOS, Android, dan platform lainnya menggunakan web tooling modern. Capacitor merupakan evolusi selanjutnya dari aplikasi hybrid, yang menciptakan aplikasi Web Native dengan pendekatan kontainer native modern untuk tim yang ingin membangun aplikasi web-first tanpa mengorbankan akses penuh ke SDK native ketika dibutuhkan. Capacitor menyediakan kumpulan API yang konsisten dan berfokus pada web yang memungkinkan aplikasi tetap dekat dengan standar web sebanyak mungkin, sambil mengakses fitur perangkat native yang kaya pada platform yang mendukungnya. Capacitor dapat menambahkan fungsionalitas native dengan mudah menggunakan Plugin API untuk Swift di iOS, Java di Android, dan JavaScript untuk web. Capacitor 3.0 memiliki peningkatan kinerja, pengalaman untuk mengembangkan yang lebih baik, dan keterlibatan komunitas yang lebih besar. Capacitor dapat diintegrasikan dengan mudah ke dalam proyek JavaScript modern yang ada atau proyek Capacitor yang baru.
+
+Sekitar tahun 2015, perusahaan PT DNArtworks Komunikasi Visual membuat aplikasi Rugby Indonesia yang memanfaatkan Apache Cordova. Aplikasi tersebut memiliki: 
+\begin{itemize}
+    \item Halaman \textit{Latest News} yang diambil dari https://rugbyindonesia.or.id dengan memanfaatkan protokol RSS.
+    \item Halaman \textbf{Fixture \& Results} yang diambil dari https://rugbyindonesia.or.id.
+    \item Halaman \textit{Teammate Photos} dengan fungsi:
+    \begin{itemize}
+        \item Pengguna dapat langsung mengambil foto dari aplikasi tersebut.
+        \item Pengguna dapat langsung memberikan frame terhadap foto tersebut.
+        \item Pengguna dapat langsung menggunggah foto tersebut ke dalam galeri publik.
+    \end{itemize}
+    \item Halaman \textit{Rugby Clubs} dengan fungsi pengguna dapat langsung mendaftar ke dalam klub rugbi di Indonesia.
+    \item Fungsi \textit{Push Notifications}.
+\end{itemize}
+
+\includegraphics[scale=0.2]{latest_news.png} \hspace{1cm} \includegraphics[scale=0.2]{fixture_results.png}
+
+Gambar 1. Halaman Latest News \hspace{1.5cm} Gambar 2. Halaman Fixture \& Results
+
+\includegraphics[scale=0.2]{teammate_photos.png} \hspace{1cm} \includegraphics[scale=0.2]{rugby_clubs.png}
+
+Gambar 3. Halaman Teammate Photos \hspace{1cm}  Gambar 4. Halaman Rugby Clubs
+
+% Tuliskan deskripsi dari topik skripsi yang akan anda ajukan. Di sini dapat dituliskan latar belakang, seperti apa penelitian yang sudah ada sebelumnya dan apa yang akan anda kerjakan. Sertakan gambar agar penjelasan anda menjadi lebih baik.
+
+Pada saat ini, aplikasi tersebut masih tersedia di Google Play Store, namun aplikasi tersebut tidak dapat dipasang pada perangkat \textit{android} saat ini dikarenakan website https://rugbyindonesia.or.id sudah berubah dan juga framework yang digunakan sudah terlalu lama. Maka dari itu pada skripsi ini, akan dibuat ulang sebuah perangkat lunak Rugby Indonesia yang terbaru, sehingga perangkat lunak tersebut dapat \textit{compatible} dengan perangkat \textit{android} saat ini.
+
+% Pada skripsi ini, akan dibuat sebuah perangkat lunak yang dapat menampilkan visualisasi dan simulasi kerumunan orang yang berkunjung ke sebuah museum. Dengan menggunakan perangkat lunak tersebut, pengelola museum dapat mengatur tempat peletakan objek sehingga tidak terjadi kerumunan yang terlalu padat.
+
+% Dari berbagai macam teknik yang dapat digunakan untuk melakukan simulasi kerumunan, dipilih dua buah teknik yaitu teknik {\it flow tiles} dan {\it social force model (steering behaviour)}.
+
+% Dst, dst, dst, \ldots\ldots\ldots 
+
+Perangkat lunak ini akan dibuat dengan memanfaatkan bantuan {\it framework} Ionic 7 dan Capacitor dengan:
+
+\begin{itemize}
+    \item Halaman \textit{Latest News}, di mana pengguna dapat melihat berita terbaru seputar Rugby Indonesia.
+    \item Halaman \textit{Teammate Photos}.
+\end{itemize}
+
+% Dst, dst, dst, \ldots\ldots\ldots 
 
 \section{Rumusan Masalah}
-Tuliskan rumusan dari masalah yang akan anda bahas pada skripsi ini. Rumusan masalah biasanya berupa kalimat pertanyaan. Gunakan itemize seperti contoh di bagian Deskripsi Perangkat Lunak.
+Rumusan masalah yang akan dibahas pada skripsi ini adalah sebagai berikut:
+\begin{itemize}
+    \item   Bagaimana Ionic Framework membantu dalam pengembangan aplikasi mobile, dan apa keunggulan yang ditawarkan oleh Ionic 7?
+    \item Bagaimana Capacitor memungkinkan pengembangan aplikasi mobile yang berkinerja tinggi dan berjalan secara native di berbagai platform, dan mengapa menjadi pilihan yang tepat untuk pengembangan ulang aplikasi Rugby Indonesia?
+\end{itemize}
+% Tuliskan rumusan dari masalah yang akan anda bahas pada skripsi ini. Rumusan masalah biasanya berupa kalimat pertanyaan. Gunakan itemize seperti contoh di bagian Deskripsi Perangkat Lunak.
 
 \section{Tujuan}
-Tuliskan tujuan dari topik skripsi yang anda ajukan. Tujuan penelitian biasanya berkaitan erat dengan pertanyaan yang diajukan di bagian rumusan masalah. Gunakan itemize seperti contoh di bagian Deskripsi Perangkat Lunak.
+Tujuan yang ingin dicapai pada penulisan skripsi ini yaitu:
+\begin{itemize}
+    \item Menganalisis bagaimana Capacitor memungkinkan pengembangan aplikasi mobile yang berkinerja tinggi dan berjalan secara native di berbagai platform.
+    \item Mengidentifikasi alasan-alasan konkret mengapa Capacitor dianggap sebagai pilihan yang tepat untuk pengembangan ulang aplikasi Rugby Indonesia, termasuk aspek-aspek teknis, performa, fleksibilitas, kelebihan, dan kekurangannya.
+\end{itemize}
+
+% Tuliskan tujuan dari topik skripsi yang anda ajukan. Tujuan penelitian biasanya berkaitan erat dengan pertanyaan yang diajukan di bagian rumusan masalah. Gunakan itemize seperti contoh di bagian Deskripsi Perangkat Lunak.
 
 \section{Deskripsi Perangkat Lunak}
-Tuliskan deksripsi dari perangkat lunak yang akan anda hasilkan. Apa saja fitur yang disediakan oleh PL tersebut dan apa saja kemampuan dari PL tersebut. Perhatikan contoh di bawah ini:
+% Tuliskan deksripsi dari perangkat lunak yang akan anda hasilkan. Apa saja fitur yang disediakan oleh PL tersebut dan apa saja kemampuan dari PL tersebut. Perhatikan contoh di bawah ini:
 
 Perangkat lunak akhir yang akan dibuat memiliki fitur minimal sebagai berikut:
 \begin{itemize}
-	\item Pengguna dapat melihat denah Musem Geologi Bandung dalam bidang dua dimensi. Sedangkan pengunjung direpresentasikan menggunakan lingkaran-lingkaran kecil (tidak menggunakan gambar manusia yang diambil dari atas)
-	\item Pengguna dapat memunculkan atau menghilangkan gambar {\it flow tiles} pada denah museum. 
-	\item Pengguna dapat mengatur jalannya simulasi: memulai(start) simulasi, menunda(pause) simulasi, melanjutkan(continue) simulasi, maupun menghentikan(stop) simulasi
-	\item Pengguna dapat mengatur banyaknya pengunjung di dalam museum, baik melalui perubahan frekuensi kedatangan pengunjung maupun menambahkan dan menghapus pengunjung satu-persatu secara manual.
-	\item Posisi kamera dapat diubah (pergerakan di bidang tiga dimensi) sehingga pengguna dapat melihat simulasi di museum dari berbagai arah. 
-	\item Posisi kamera dapat diubah untuk emngikuti perjalanan seorang pengunjung di dalam 
-	\item Pengguna dapat memilih apakah akan menggunakan teknik {\it flow tiles} atau tidak pada saat simulasi berlangsung
-	\item Jenis {\it flow tiles} yang digunakan dapat diubah-ubah pada saat simulasi sedang berlangsung
-		
+    \item Pengguna dapat melihat berita terbaru yang terdapat pada Rugby Indonesia.
+    \item Pengguna dapat melihat foto yang diunggah oleh pengguna tersebut maupun pengunggah lain pada aplikasi Rugby Indonesia.
+    \item Pengguna dapat megunduh foto yang terdapat pada aplikasi Rugby Indonesia.
+    \item Pengguna dapat mengubah ataupun menghapus unggahan foto pengguna tersebut pada aplikasi Rugby Indonesia, namun tidak dapat melakukan hal tersebut pada foto yang diunggah oleh orang lain.
 \end{itemize}
 
 \section{Detail Pengerjaan Skripsi}
 Tuliskan bagian-bagian pengerjaan skripsi secara detail. Bagian pekerjaan tersebut mencakup awal hingga akhir skripsi, termasuk di dalamnya pengerjaan dokumentasi skripsi, pengujian, survei, dll.
 
 Bagian-bagian pekerjaan skripsi ini adalah sebagai berikut :
-	\begin{enumerate}
-		\item Melakukan survei ke Museum Geologi Bandung untuk mendapatkan denah serta mengetahui perilaku pengunjung museum secara umum (arah perjalanan, kecepatan, lama melihat objek, dll)
-		\item Melakukan analisis pada hasil survei terhadap pergerakan pengunjung di museum dan membuat rancangan denah di komputer yang dilengkapi dengan penghalang dan objek di museum.
-		\item Melakukan studi literatur mengenai sifat kolektif suatu kerumunan, teknik {\it social force model} dan teknik {\it flow tiles}
-		\item Mempelajari bahasa pemrograman C++ dan cara menggunakan framework OpenSteer
-		\item Merancang pergerakan kerumunan di dalam museum menggunakan teknik {\it social force model} dan {\it flow tiles} serta menggunakan teknik lainnya seperti konsep pathway dan waypoints. Selain itu, dirancang pula adanya waktu tunggu (pada saat pengunjung melihat objek di museum) dan cara pembuatan jalur bagi setiap individu pengunjung
-		\item Melakukan analisa dan merancang struktur data yang cocok untuk menyimpan penghalang (obstacle)
-		\item Mengimplementasikan keseluruhan algoritma dan struktur data yang dirancang, dengan menggunakan framework OpenSteer 
-		\item Melakukan pengujian (dan eksperimen) yang melibatkan responde untuk menilai hasil simulasi secara kualitatif
-		\item Menulis dokumen skripsi
-	\end{enumerate}
+\begin{enumerate}
+    \item Mendalami ReactJS sebagai salah satu perpustakaan JavaScript.
+    \item Menganalisis aplikasi Rugby Indonesia yang sudah dibuat dengan memanfaatkan Apache Cordova.
+    \item Menganalisis fitur-fitur yang dibutuhkan untuk alikasi Rugby Indonesia.
+    \item Membuat aplikasi Rugby Indonesia yang sudah memanfaatkan framework Ionic 7 dan juga Capacitor.
+    \item Melakukan pengujian dan eksperimen.
+    \item Menulis dokumen skripsi
+\end{enumerate}
 
 \section{Rencana Kerja}
 Rincian capaian yang direncanakan di Skripsi 1 adalah sebagai berikut:
 \begin{enumerate}
-\item
-\item
-\item
+    \item Mempelajarai, memahami, serta mendalami ReactJS sebagai salah satu perpustakaan JavaScript yang akan digunakan pada skripsi ini.
+    \item Mempelajari, memahami, dan mendalami framework Ionic 7 serta Capacitor.
+    \item Menganalisis kebutuhan fitur yang diperlukan untuk aplikasi Rugby Indonesia.
+    \item Menulis dokumen skripsi dari Bab 1 hingga Bab 3.
 \end{enumerate}
 
 Sedangkan yang akan diselesaikan di Skripsi 2 adalah sebagai berikut:
 \begin{enumerate}
-\item
-\item
-\item
+    \item Membuat aplikasi Rugby Indonesia yang sudah memanfaatkan framework Ionic 7 serta Capacitor.
+    \item Melakukan pengujian dan juga eksperimen terhadap aplikasi yang akan dibuat.
+    \item Menulis dokumen skripsi dari Bab 4 hingga selesai.
 \end{enumerate}
 
 \vspace{1cm}
@@ -129,7 +183,7 @@ Menyetujui, \\
 \vspace{0.5cm}
 }{
 % \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013\\
-\vspace{2cm} Nama: \makebox[3cm]{\hrulefill}\\ Pembimbing Tunggal
+\vspace{2cm} Pascal Alfadian Nugroho, S.Kom., M.Comp.
 }
 \end{document}
 
