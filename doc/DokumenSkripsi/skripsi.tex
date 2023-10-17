@@ -79,18 +79,16 @@
 \newcommand{\vtextup}[3]{\IfStrEq{\vmode}{template}{\newcommand{#1}{\uppercase{\rtext{#2}}#3}}{\newcommand{#1}{\uppercase{#2}}}}
 
 %default data prodi
-\newcommand{\vprodiINA}{{\small <<MATEMATIKA/FISIKA/TEKNIK INFORMATIKA>>}}
-\newcommand{\vprodiENG}{\rtext{<<MATHEMATICS/PHYSICS/INFORMATICS>>}}
-\newcommand{\vstaINA}{\rtext{<<SKRIPSI/TUGAS AKHIR>>}} 
-\newcommand{\vstaENG}{\rtext{<<FINAL PROJECT/UNDERGRADUATE THESIS>>}}
-\newcommand{\vkaprodi}{<<Ketua Program Studi>>}
+\newcommand{\vprodiINA}{{\small TEKNIK INFORMATIKA}}
+\newcommand{\vprodiENG}{\rtext{INFORMATICS}}
+\newcommand{\vstaINA}{\rtext{TUGAS AKHIR}} 
+\newcommand{\vstaENG}{\rtext{FINAL PROJECT}}
+\newcommand{\vkaprodi}{Mariskha Tri Adithia, S.Si., M.Sc., PDEng.}
   
 %data kaprodi 
 \newcommand{\kaprodiMAT}{}
 \newcommand{\kaprodiFIS}{}
 \newcommand{\kaprodiTIF}{}
-
-\include{dosen}%dosen.tex
 
 %perubahan data prodi
 \newcommand{\vmat}{
@@ -109,8 +107,8 @@
 
 %data mahasiswi/a dan prodi 
 \newcommand{\namanpm}[2]{%
-	\vtext{\vnama}{#1}{}
-	\vtext{\vnpm}{#2}{}
+	\vtext{\vnama}{Nathanael Adi Trianto}{}
+	\vtext{\vnpm}{6181901041}{}
 	\newtoggle{okNPM}
 	\iftoggle{cekNPM}{%cek penulisan NPM
 		\newtoggle{myint} \newtoggle{mylen} \StrLen{\vnpm}[\mystrlen]
@@ -134,9 +132,9 @@
 
 %data tanggal sidang
 \newcommand{\tanggal}[3]{
-	\newcommand{\vtanggal}{\rtext{#1}} \IfInteger{#1}{\renewcommand{\vtanggal}{#1}}{}
-	\newcommand{\vtahun}{\rtext{#3}} \IfInteger{#3}{\renewcommand{\vtahun}{#3}}{}
-	\newcommand{\vbulan}{\rtext{#2}}
+	\newcommand{\vtanggal}{\rtext{15}} \IfInteger{#1}{\renewcommand{\vtanggal}{#1}}{}
+	\newcommand{\vtahun}{\rtext{2023}} \IfInteger{#3}{\renewcommand{\vtahun}{#3}}{}
+	\newcommand{\vbulan}{\rtext{November}}
 	\IfStrEqCase{#2}{%ubah angka bulan menjadi kata
 		{1}{\renewcommand{\vbulan}{Januari}}	{2}{\renewcommand{\vbulan}{Februari}}	
 		{3}{\renewcommand{\vbulan}{Maret}}		{4}{\renewcommand{\vbulan}{April}}	
@@ -148,20 +146,31 @@
 }
 
 % data primer skripsi	 
-\newcommand{\judulINA}[1]{\vtextup{\vjudulINA}{#1}{} \hypersetup{pdftitle={#1}}}	
+\newcommand{\judulINA}[1]{\vtextup{\vjudulINA}{Pembuatan Ulang Aplikasi Rugby Indonesia dengan Ionic 7 dan Capacitor}{} \hypersetup{pdftitle={#1}}}	
 %\newcommand{\judulINA}[1]{\vtextup{\vjudulINA}{#1}{}}	
-\newcommand{\judulENG}[1]{\vtextup{\vjudulENG}{#1}{}}	
-\newcommand{\abstrakINA}[1]{\vtext{\vabstrakINA}{#1}{\\\dtext{2}}} 
+\newcommand{\judulENG}[1]{\vtextup{\vjudulENG}{Remake the Indonesian Rugby Application with Ionic 7 and Capacitor}{}}	
+\newcommand{\abstrakINA}[1]{\vtext{\vabstrakINA}{Pada tugas akhir ini akan dikerjakan sebuah perangkat lunak untuk Rugby Indonesia yang dibuat dengan menggunakan \textit{framework} dari Ionic 7 dan Capacitor. Tujuan dari pembuatan ulang aplikasi Rugby Indonesia ini adalah untuk memperbaharui aplikasi lama yang sudah ada, dikarenakan aplikasi yang sudah ada tersebut tidak dapat dipasangkan pada perangkat Android yang ada saat ini. Persatuan Rugby Union Indonesia merupakan organisasi yang bertanggung jawab atas pengelolaan dan pengembangan Rugby Union di Indonesia. Mereka memiliki tim nasional putra dan putri. Tim nasional Rugby Union Indonesia mewakili Indonesia dalam Rugby Union dan dijuluki ``Rhinos''. Tim ini adalah anggota penuh World Rugby dan belum pernah bermain di Piala Dunia Rugby. Rugby Union di Indonesia adalah olahraga minor namun berkembang, yang telah ada selama beberapa dekade, dan mengalami fluktuasi dalam kesuksesannya. Pada tahun 2023, terdapat 35 klub rugby, 700 pemain terdaftar, 45 pelatih terdaftar, dan 23 wasit terdaftar di Indonesia.
+}{\\\dtext{2}}} 
 \newcommand{\abstrakENG}[1]{\vtext{\vabstrakENG}{#1}{\\\dtext{2}}} 
-\newcommand{\kunciINA}[1]{\vtext{\vkunciINA}{#1}{}\hypersetup{pdfkeywords={#1}}}
+\newcommand{\kunciINA}[1]{\vtext{\vkunciINA}{Perangkat lunak, Rugby Indonesia, Persatuan Rugby Union Indonesia}{}\hypersetup{pdfkeywords={#1}}}
 %\newcommand{\kunciINA}[1]{\vtext{\vkunciINA}{#1}{}}  
 \newcommand{\kunciENG}[1]{\vtext{\vkunciENG}{#1}{}} 
 \newcommand{\untuk}[1]{\vtext{\vuntuk}{#1}{}}
-\newcommand{\prakata}[1]{\vtext{\vprakata}{#1}{\\\dtext{3-4}}}
+\newcommand{\prakata}[1]{\vtext{\vprakata}{Dengan mengucapkan segala puji dan syukur kepada Tuhan Yang Maha Esa, atas berkat dan karunia-Nya, penulis masih dapat hidup hingga saat ini, sehingga penulis dapat menyusun laporan tugas akhir dengan judul ``Pembuatan Ulang Aplikasi Rugby Indonesia dengan Ionic 7 dan Capacitor''. Penulis mengetahui bahwa laporan tugas akhir ini masih terdapat imperfeksi dikarenakan penulis masih merupakan seorang manusia yang tidak luput dari kesalahan. Maka dari itu, penulis mengharapkan kritik dan saran dari pembaca sebagai masukan bagi penulis agar dokumen ini dapat menjadi lebih baik lagi. Penulis juga mengucapkan terima kasih sebesar-besarnya kepada pihak yang telah membantu penulis dalam menyelesaikan skripsi ini. Ucapan terima kasih ini penulis sampaikan kepada:
+\begin{enumerate}
+    \item Tuhan Yang Maha Esa sehingga penulis dapat menyelesaikan tugas akhir ini sebagaimana mestinya.
+    \item Ibu Dr.rer.nat. Cecilia Esti Nugraheni selaku Dekan Fakultas Teknologi Informasi dan Sains Universitas Katolik Parahyangan.
+    \item Ibu Mariskha Tri Adithia, S.Si., M.Sc., PDEng. selaku Ketua Program Studi Teknik Informatika Universitas Katolik Parahyangan.
+    \item Bapak Pascal Alfadian Nugroho, S.Kom., M.Comp. selaku Dosen Pembimbing, serta Dosen Wali yang telah membantu serta memberi masukan kepada penulis agar tgas akhir ini dapat diselesaikan dengan tepat waktu.
+    \item Seluruh Dosen Program Studi Teknik Informatika Universitas Katolik Parahyangan yang telah memberikan pengajaran serta ilmu yang bermanfaat untuk dikemudian hari.
+    \item Seluruh teman-teman penulis yang selalu memberikan dukungan, bantuan, dan saran sehingga tugas akhir ini dapat diselesaikan dengan tepat waktu bersamaan dengan mata kuliah Desain dan Analisis Algoritma.
+\end{enumerate}
+Akhir kata, penulis ucapkan terima kasih juga kepada pembaca yang telah membaca dokumen tugas akhir ini, kiranya Tuhan memberkati serta melindungi kita semua dari hal-hal yang tidak baik. Semoga tugas akhir ini dapat memberikan banyak manfaat bagi orang-orang yang membacanya.
+}{\\\dtext{3-4}}}
 
 %data pembimbing dan penguji	
 \newcommand{\vnpemb}{2}
-\newcommand{\pembimbing}[2]{\vtext{\vpembu}{#1}{} \vtext{\vpembs}{#2}{}}
+\newcommand{\pembimbing}[2]{\vtext{\vpembu}{Pascal Alfadian Nugroho, S.Kom., M.Comp.}{} \vtext{\vpembs}{#2}{}}
 \newcommand{\penguji}[2]{\vtext{\vpengi}{#1}{} \vtext{\vpengii}{#2}{}}
 
 %settings
@@ -268,6 +277,8 @@
 
 %isi dokumen
 \begin{document}
+\include{dosen}%dosen.tex
+
 	
 \raggedbottom
  
@@ -342,12 +353,12 @@
 				 {\begin{Form} \ \digsigfield{5cm}{2.5cm}{\vpembu}\ \end{Form}\\} 
 				 \vpembu\end{center}
 			 \end{minipage} \hspace{0.5cm}
-			 \begin{minipage}[b]{0.475\textwidth}
-				 \begin{center} Pembimbing Pendamping \\
-				 \IfStrEq{\vttddosen}{no}{\vspace{2.5cm}}
-				 {\begin{Form} \ \digsigfield{5cm}{2.5cm}{\vpembs}\ \end{Form}\\}
-				 \vpembs\end{center}
-			 \end{minipage}	
+			 % \begin{minipage}[b]{0.475\textwidth}
+				%  \begin{center} Pembimbing Pendamping \\
+				%  \IfStrEq{\vttddosen}{no}{\vspace{2.5cm}}
+				%  {\begin{Form} \ \digsigfield{5cm}{2.5cm}{\vpembs}\ \end{Form}\\}
+				%  \vpembs\end{center}
+			 % \end{minipage}	
 			}
 		\end{center}  
 		\vspace{0.75cm} 
