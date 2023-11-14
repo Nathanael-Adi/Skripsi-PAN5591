@@ -5,18 +5,25 @@
 \section{Latar Belakang}
 \label{sec:label}
 
-Sekitar tahun 2015, perusahaan PT DNArtworks Komunikasi Visual membuat aplikasi Rugby Indonesia yang memanfaatkan Apache Cordova. Aplikasi tersebut memiliki: 
+\textit{Rugby} adalah olahraga tim yang berasal dari abad ke-19 sebagai variasi dari permainan sepak bola. Dalam \textit{rugby}, tujuan dari olahraga ini adalah meletakkan bola di belakang garis \textit{try} lawan.\footnote{\url{https://id.wikipedia.org/wiki/Sepak_bola_rugbi}} Olahraga ini dapat dimainkan dengan tangan dan juga tendangan, tetapi pemain hanya boleh melempar bola atau diserahkan ke belakang saat dibawa menggunakan tangan. \footnote{\url{https://www.sehataqua.co.id/apa-itu-olahraga-rugby/}}
+
+Persatuan Rugby Union Indonesia (PRUI) adalah organisasi yang bertanggung jawab atas pengelolaan dan pengembangan Rugby Union di Indonesia.\footnote{\url{https://www.asiarugby.com/unions/indonesia/}} Mereka memiliki tim nasional putra dan putri.\footnote{\url{https://rugbyindonesia.or.id/tentang/}} Tim nasional rugby union Indonesia mewakili Indonesia dalam rugby union dan dijuluki "Rhinos". Tim ini adalah anggota penuh World Rugby dan belum pernah bermain di Piala Dunia Rugby.\footnote{\url{https://en.wikipedia.org/wiki/Indonesia_national_rugby_union_team}} Rugby union di Indonesia adalah olahraga minor namun berkembang, yang telah ada selama beberapa dekade, dan mengalami fluktuasi dalam kesuksesannya.\footnote{\url{https://en.wikipedia.org/wiki/Rugby_union_in_Indonesia}} Pada tahun 2023, terdapat 35 klub rugby, 700 pemain terdaftar, 45 pelatih terdaftar, dan 23 wasit terdaftar di Indonesia.\footnote{\url{https://rugbyindonesia.or.id/}}
+
+Ionic Framework adalah \textit{toolkit UI open-source} untuk membangun aplikasi modern, \textit{cross-platform} yang berkualitas tinggi dari satu kode sumber dengan JavaScript dan web. Ionic menyediakan alat dan layanan untuk mengembangkan aplikasi \textit{hybrid mobile, desktop}, dan \textit{progressive web} berdasarkan teknologi dan praktik pengembangan web modern, menggunakan teknologi web seperti CSS, HTML5, dan Sass. Ionic 7 adalah versi \textit{stable release} terbaru dari Ionic, yang memperkenalkan cara kerja yang lebih efisien dengan kontrol formulir seperti \textit{Toggle} atau \textit{Input}. Komponen \textit{Item} dan Label tidak lagi diperlukan, dan setiap kontrol formulir menangani konten label secara langsung. Selain itu, fitur tertentu seperti teks bantuan atau mode pengisian \textit{input} telah dipindahkan dari \texttt{ion-item} ke kontrol formulir yang sesuai seperti \texttt{ion-input}, \texttt{ion-textarea}, dan \texttt{ion-select}. Perubahan ini mengurangi \textit{boilerplate} kode dengan menghilangkan persyaratan \texttt{ion-item} dan ion-label. Komponen Ionic Framework secara otomatis menyesuaikan tampilan dan nuansa mereka dengan platform di mana mereka berjalan, memungkinkan gestur dan perilaku \textit{native} yang sama dengan yang biasa digunakan pengguna. Ionic memiliki lebih dari 100 komponen \textit{UI} yang telah dirancang sebelumnya, tipografi, dan tema dasar yang menyesuaikan dengan setiap platform. Ini dioptimalkan untuk \textit{mobile} dengan animasi yang diakselerasi oleh \textit{hardware}, \textit{lazy loading}, dan \textit{scrolling} 60FPS. Ionic CLI digunakan untuk membuat, membangun, dan menguji aplikasi serta memanfaatkan \textit{Live Reload, deployment}, dan dokumen~yang~baik. \footnote{\url{https://github.com/ionic-team/ionic-framework}}
+
+Capacitor adalah \textit{runtime native cross-platform} yang memudahkan pembuatan aplikasi \textit{mobile} yang performanya tinggi dan berjalan secara \textit{native} di iOS, Android, dan platform lainnya menggunakan \textit{web tooling modern}. Capacitor merupakan evolusi selanjutnya dari aplikasi \textit{hybrid}, yang menciptakan aplikasi \textit{Web Native} dengan pendekatan \textit{native container} modern untuk tim yang ingin membangun aplikasi \textit{web-first} tanpa mengorbankan akses penuh ke SDK \textit{native} ketika dibutuhkan. Capacitor menyediakan kumpulan API yang konsisten dan berfokus pada web yang memungkinkan aplikasi tetap dekat dengan standar web sebanyak mungkin, sambil mengakses fitur perangkat \textit{native} yang kaya pada platform yang mendukungnya. Capacitor dapat menambahkan fungsionalitas \textit{native} dengan mudah menggunakan \textit{Plugin} API untuk Swift di iOS, Java di Android, dan JavaScript untuk web. Capacitor 3.0 memiliki peningkatan kinerja, pengalaman untuk mengembangkan yang lebih baik, dan keterlibatan komunitas yang lebih besar. Capacitor dapat diintegrasikan dengan mudah ke dalam proyek JavaScript modern yang ada atau proyek Capacitor yang~baru.
+
+Pada sekitar tahun 2015, perusahaan PT DNArtworks Komunikasi Visual membuat aplikasi Rugby Indonesia yang memanfaatkan Apache Cordova. Aplikasi tersebut memiliki: 
 \begin{itemize}
-    \item Halaman \textit{Latest News} yang diambil dari \url{https://rugbyindonesia.or.id} dengan~memanfaatkan~protokol~RSS.
-    \item Halaman \textit{Fixture \& Results} yang diambil dari \url{https://rugbyindonesia.or.id}.
+    \item Halaman \textit{Latest News} yang diambil dari \url{https://rugbyindonesia.or.id/berita/} dengan memanfaatkan~protokol~RSS. {(Lihat gambar \ref{fig:rugby-halaman-label})}
+    \item Halaman \textit{Fixture \& Results}, namun sekarang sudah tidak ada. {(Lihat gambar \ref{fig:rugby-halaman-label})}
     \item Halaman \textit{Teammate Photos} dengan fungsi:
     \begin{itemize}
         \item Pengguna dapat langsung mengambil foto dari aplikasi tersebut.
         \item Pengguna dapat langsung memberikan \textit{frame} terhadap foto tersebut.
         \item Pengguna dapat langsung menggunggah foto tersebut ke dalam galeri publik.
     \end{itemize}
-    \item Halaman \textit{Rugby Clubs} yang memiliki fungsi di mana pengguna dapat langsung mendaftar ke dalam \textit{Rugby Clubs} yang berada di Indonesia.
-    \item Fungsi \textit{Push Notifications}.
+    \item Halaman \textit{Rugby Clubs} yang memiliki fungsi di mana pengguna dapat melihat klub \textit{rugby} serta info dari klub tersebut pada tiap daerah. {(Lihat gambar \ref{fig:rugby-halaman-label})}
 \end{itemize}
 
 \begin{figure} [!h]
@@ -26,14 +33,13 @@ Sekitar tahun 2015, perusahaan PT DNArtworks Komunikasi Visual membuat aplikasi 
     \label{fig:rugby-halaman-label}
 \end{figure}
 
-Pada saat ini, aplikasi tersebut masih tersedia di Google Play Store\footnote{https://play.google.com/store/apps/details?id=id.or.rugbyindonesia.androidapp\&hl=in}, namun aplikasi tersebut tidak dapat dipasang pada perangkat android saat ini dikarenakan \textit{website} \url{https://rugbyindonesia.or.id} sudah berubah dan juga \textit{framework} yang digunakan sudah terlalu lama. Maka dari itu pada skripsi ini, akan dibuat ulang sebuah perangkat lunak Rugby Indonesia yang terbaru, sehingga perangkat lunak tersebut dapat \textit{compatible} dengan perangkat android saat ini.
+Pada saat ini, aplikasi tersebut masih tersedia di Google Play Store\footnote{\url{https://play.google.com/store/apps/details?id=id.or.rugbyindonesia.androidapp\&hl=in}}, namun aplikasi tersebut tidak dapat dipasang pada perangkat android saat ini dikarenakan \textit{website} \url{https://rugbyindonesia.or.id} sudah berubah dan juga \textit{framework} yang digunakan sudah terlalu lama. Maka dari itu pada skripsi ini, akan dibuat ulang sebuah perangkat lunak Rugby Indonesia yang terbaru, sehingga perangkat lunak tersebut dapat \textit{compatible} dengan perangkat android saat ini.
 
 Perangkat lunak ini akan dibuat dengan memanfaatkan bantuan {\it framework} Ionic 7 dan Capacitor dengan:
 
 \begin{itemize}
     \item Halaman \textit{Latest News}, di mana pengguna dapat melihat berita terbaru seputar Rugby Indonesia.
-    \item Halaman \textit{Teammate Photos}.
-    \item Fitur lain yang akan ditambahkan ketika dibutuhkan.
+    \item Halaman \textit{Teammate Photos} di mana pengguna dapat mengambil foto dan langsung mengunggahnya ke dalam halaman \textit{teammate photos}.
 \end{itemize}
 
 % Bagian ini akan diisi dengan apa yang melatarbelakangi pembuatan template skripsi ini.
@@ -67,25 +73,59 @@ Tujuan yang ingin dicapai pada penulisan tugas akhir ini yaitu:
 \section{Batasan Masalah}
 \label{sec:batasan}
 Batasan masalah yang terdapat pada pengerjaan tugas akhir ini yaitu:
-\begin{itemize}
-    \item Perangkat lunak ini memang sudah pernah dibuat pada tahun 2015 sebelumnya, namun perangkat lunak ini masih dibuat dengan menggunakan Apache Cordova, sehingga dokumentasi yang ada cukup berbeda dengan Ionic 7.
-    \item Perangkat lunak ini hanya memfokuskan kepada aplikasi Rugby Indonesia saja.
-    \item Pembuatan ulang perangkat lunak ini akan hanya mencakup fitur-fitur dasar seperti login, pengelolaan profil pengguna, dan pengambilan foto.
-\end{itemize}
+\begin{enumerate}
+    \item Perangkat lunak ini dibuat untuk perangkat Android saja, tidak untuk iOS. Sehingga pengujian dari perangkat lunak ini hanya dilakukan pada platform berbasis android saja.
+    \item Pengguna hanya bisa mengunggah foto dan melihat foto unggahan dari pengguna lain, pengguna tidak dapat menghapus ataupun mengubah foto tersebut.
+    
+\end{enumerate}
 % Untuk mempermudah pembuatan template ini, tentu ada hal-hal yang harus dibatasi, misalnya saja bahwa template ini bukan berupa style \LaTeX{} pada umumnya (dengan alasannya karena belum mampu jika diminta membuat seperti itu)
 
 % \dtext{8}
 
 \section{Metodologi}
 \label{sec:metlit}
+Langkah-langkah yang dilakukan dlaam pengerjaan tugas akhir ini yaitu:
+\begin{enumerate}
+    \item Melakukan studi literatur serta mendalami ReactJS sebagai salah satu perpustakaan JavaScript.
+    \item Melakukan studi literatur mengenai framework Ionic 7 dan juga Capacitor yang terdapat pada Ionic.
+    \item Membangun aplikasi Rugby Indonesia yang sudah menggunakan framework Ionic 7 serta Capacitor.
+    \item Melakukan pengujian dan eksperimen.
+    \item Menulis dokumen tugas akhir.
+\end{enumerate}
 % Tentunya akan diisi dengan metodologi yang serius sehingga templatenya terkesan lebih serius.
 
-\dtext{9}
+% \dtext{9}
 
 \section{Sistematika Pembahasan}
 \label{sec:sispem}
+Penulisan setiap bab pada dokumen tugas akhir ini yaitu:
+\begin{enumerate}
+    \item Bab Pendahuluan
+    
+    Bab 1 berisi latar belakang, rumusan masalah, tujuan, batasan masalah, metodologi, dan sistematika pembahasan yang digunakan untuk menyusun skripsi ini.
+
+    \item Bab Dasar Teori
+    
+    Bab 2 berisi teori-teori yang digunakan dalam pembuatan skripsi ini. Teori-teori tersebut yaitu Rugby Union Indonesia, ReactJS, Ionic 7 Framework, Capacitor, UI Components.
+
+    \item Bab Analisis
+    
+    Bab 3 berisi analisis yang dilakukan pada skripsi ini, meliputi analisis sistem kini, analisis kebutuhan aplikasi Rugby Indonesia yang akan dibangun, serta permasalahan pembangunan sistem usulan.
+
+    \item Bab Perancangan
+    
+    Bab 4 berisi perancangan aplikasi meliputi perancangan kelas beserta dengan diagram kelas, deskripsi kelas dan fungsinya, serta perancangan struktur HTML.
+
+    \item Bab Implementasi dan Pengujian
+    
+    Bab 5 berisi implementasi dan pengujian aplikasi meliputi lingkungan implementasi, hasil implementasi, pengujian fungsional, dan pengujian eksperimental.
+    
+    \item Bab Kesimpulan dan Saran
+    
+    Bab 6 berisi kesimpulan dari hasil pembangunan aplikasi ini dan saran untuk pengembangan selanjutnya.
+\end{enumerate}
 % Rencananya Bab 2 akan berisi petunjuk penggunaan template dan dasar-dasar \LaTeX.
 % Mungkin bab 3,4,5 dapt diisi oleh ketiga jurusan, misalnya peraturan dasar skripsi atau pedoman penulisan, tentu jika berkenan.
 % Bab 6 akan diisi dengan kesimpulan, bahwa membuat template ini ternyata sungguh menghabiskan banyak waktu.
 
-\dtext{10}
+% \dtext{10}
