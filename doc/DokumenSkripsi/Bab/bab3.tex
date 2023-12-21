@@ -1,14 +1,20 @@
-Aplikasi Rugby Indonesia yang ada digunakan bagi para pemain rugby di Indonesia memiliki halaman utama yang berisi berita-berita terkini terkait permainan rugby yang ada di Indonesia, toolbar yang berisikan tombol home untuk kembali ke halaman utama, dan tombol menu untuk berpindah ke menu lainnya. Selain berfungsi untuk membaca berita, aplikasi yang ada ini berfungsi untuk menangkap gambar dan menguploadnya pada halaman teammate photo, melihat rugby clubs yang berada di tiap daerah, serta dapat melihat skor dari tiap pertandingan.
+\chapter{Analisis}
+\label{chap:analisis}
 
-\begin{figure} [!h]
+Bab analisis ini akan menjelaskan tentang analisis dari aplikasi Rugby Indonesia yang ada serta analisis dari aplikasi Rugby Indonesia yang akan dibangun. Analisis yang akan dibahas pada bab ini meliputi Use Case Diagram, analisis kebutuhan sistem kini serta analisis sistem usulan.
+
+\section{Analisis Sistem Kini}
+Analisis sistem kini yang dilakukan pada subbab ini dilakukan dengan cara menganalisis aplikasi Rugby Indonesia berdasarkan hasil tangkapan layar yang terdapat pada Google Play Store. Hal ini dilakukan karena peneliti tidak memiliki kode dari aplikasi yang sudah ada. Aplikasi Rugby Indonesia yang ada pada Google Play Store memiliki halaman utama yang berisi berita-berita terkini terkait permainan \textit{rugby} yang ada di Indonesia, \textit{toolbar} yang berisikan tombol \textit{home} untuk kembali ke halaman utama, dan tombol menu untuk berpindah ke menu lainnya. Selain berfungsi untuk membaca berita, aplikasi yang ada ini berfungsi untuk menangkap gambar dan meng-\textit{upload}-nya pada halaman \textit{Teammate Photo}, melihat \textit{Rugby Clubs} yang berada di tiap daerah, serta dapat melihat skor dari tiap pertandingan pada halaman \textit{Fixture \& Results}. Fungsi dari aplikasi Rugby Indonesia dapat dilihat pada (Gambar \ref{fig:ucd-rugby-indonesia-app}).
+
+\begin{figure} [H]
     \centering
-    \includegraphics{Gambar/Existing-UCD-Rugby-App.png}
+    \includegraphics[scale=0.8]{Gambar/Existing-UCD-Rugby-Indonesia-App.png}
     \caption{Use Case Diagram Rugby Indonesia App}
     \label{fig:ucd-rugby-indonesia-app}
 \end{figure}
 
 \subsection{Halaman Utama}
-Pada halaman Utama dari Rugby Indonesia, terdapat berita-berita terkini yang diambil dari halaman \url{rugbyindonesia.or.id/berita/}, tombol ``read more'' untuk melihat berita yang ingin dibaca lebih lengkap. Halaman ini merupakan halaman awal saat pengguna membuka aplikasi Rugby Indonesia pertama kali. 
+Pada halaman Utama dari Rugby Indonesia, terdapat berita-berita terkini yang diambil dari halaman \url{rugbyindonesia.or.id/berita/}, tombol `\textit{read more}' untuk melihat berita yang ingin dibaca lebih lengkap. Halaman ini merupakan halaman awal saat pengguna membuka aplikasi Rugby Indonesia pertama kali. Skenario penggunaan awal aplikasi Rugby Indonesia terdapat pada (Tabel \ref{tab:existing-scenario-welcome-page}), di mana pada tabel skenario tersebut, saat aplikasi pertama kali dibuka, aplikasi akan langsung mengarahkan pengguna ke dalam halaman\textit{ Latest News}.
 
 \begin{table} [!h]
     \centering
@@ -21,17 +27,17 @@ Pada halaman Utama dari Rugby Indonesia, terdapat berita-berita terkini yang dia
         2 & Pengguna mengklik & Aplikasi Rugby Indonesia akan menampilkan \\ 
          & tombol home &  halaman utama. \\ \hline
         3 & Pengguna mengklik & Aplikasi Rugby Indonesia akan menampilkan \\ 
-         & tombol menu &  side menu yang berisi menu-menu dari \\ 
+         & tombol menu &  \textit{side menu} yang berisi menu-menu dari \\ 
          & &  aplikasi Rugby Indonesia. \\ \hline
         4 & Pengguna mengklik & Aplikasi Rugby Indonesia akan menampilkan \\
-          & tombol ``read more'' & berita yang dipilih oleh pengguna secara lengkap. \\ \hline
+          & tombol `\textit{read more}' & berita yang dipilih oleh pengguna secara lengkap. \\ \hline
     \end{tabular}
     \label{tab:existing-scenario-welcome-page}
 \end{table}
 
 \subsection{Halaman Teammate Photos}
 
-Pada halaman teammate photos, pengguna dapat melihat serta mengupload gambar maupun tangkapan gambar yang ingin diunggah ke dalam halaman ini. Pengguna juga dapat memberikan frame terhadap foto yang ingin diunggahnya.
+Pada halaman \textit{teammate Photos}, pengguna dapat melihat serta meng-\textit{upload} gambar maupun tangkapan gambar yang ingin diunggah ke dalam halaman ini. Pengguna juga dapat memberikan \textit{frame} terhadap foto yang ingin diunggahnya. Skenario pengguna saat berada pada halaman Teammate Photos terdapat pada (Tabel \ref{tab:existing-scenario-teammate-photos-page}).
 
 \begin{table} [!h]
     \centering
@@ -39,12 +45,12 @@ Pada halaman teammate photos, pengguna dapat melihat serta mengupload gambar mau
     \begin{tabular}{|c|c|c|}
     \hline
        No. & Aksi Aktor & Reaksi Sistem  \\ \hline
-        1 & Pengguna menekan tombol teammate & Aplikasi Rugby Indonesia menampilkan \\
-         &  photos pada side menu. & halaman Teammate Photos \\ \hline
-        2 & Pengguna mengklik & Aplikasi akan membuka camera \\ 
-         & tombol ``take a photo'' &  \\ \hline
+        1 & Pengguna menekan menu Teammate & Aplikasi Rugby Indonesia menampilkan \\
+         &  Photos pada \textit{side menu}. & halaman \textit{Teammate Photos} \\ \hline
+        2 & Pengguna mengklik & Aplikasi akan membuka kamera \\ 
+         & tombol `\textit{take a photo}' &  \\ \hline
         3 & Pengguna mengklik & Aplikasi akan membuka  \\ 
-         & tombol ``load from library'' & library gambar  \\ \hline
+         & tombol `\textit{load from library}' & \textit{library} gambar  \\ \hline
         4 & Pengguna mengklik & Aplikasi akan menampilkan \\
           & gambar yang ada & gambar tersebut lebih besar. \\ \hline
     \end{tabular}
@@ -52,22 +58,22 @@ Pada halaman teammate photos, pengguna dapat melihat serta mengupload gambar mau
 \end{table}
 
 \subsection{Halaman Rugby Clubs}
-Pada halaman rugby clubs, pengguna dapat melihat informasi terkait klub rugby yang berada di tiap daerah
+Pada halaman Rugby Clubs, pengguna dapat melihat informasi terkait klub \textit{rugby} yang berada di tiap daerah. Skenario pengguna saat berada pada halaman Rugby Clubs terdapat pada (Tabel \ref{tab:existing-scenario-rugby-clubs-page}).
 
-\begin{table} [!h]
+\begin{table} [H]
     \centering
     \caption{Tabel Skenario dari Halaman Rugby Clubs}
     \begin{tabular}{|c|c|c|}
     \hline
        No. & Aksi Aktor & Reaksi Sistem  \\ \hline
-        1 & Pengguna menekan tombol rugby & Aplikasi Rugby Indonesia menampilkan \\
-         &  clubs pada side menu. & halaman Rugby Clubs \\ \hline
+        1 & Pengguna menekan menu Rugby & Aplikasi Rugby Indonesia menampilkan \\
+         &  Clubs pada \textit{side menu}. & halaman Rugby Clubs \\ \hline
     \end{tabular}
     \label{tab:existing-scenario-rugby-clubs-page}
 \end{table}
 
 \subsection{Halaman Fixture \& Results}
-Pada halmaan Fixture \& Results, pengguna dapat melihat hasil pertandingan skor dari permainan rugby yang sudah diselenggarakan.
+Pada halmaan Fixture \& Results, pengguna dapat melihat hasil pertandingan skor dari permainan rugby yang sudah diselenggarakan. Skenario pengguna saat berada pada halaman Fixture \& Results terdapat pada (Tabel \ref{tab:existing-scenario-fixture-results-page}).
 
 \begin{table} [!h]
     \centering
@@ -83,20 +89,29 @@ Pada halmaan Fixture \& Results, pengguna dapat melihat hasil pertandingan skor 
     \label{tab:existing-scenario-fixture-results-page}
 \end{table}
 
-Aplikasi Rugby Indoensia saat ini menggunakan framework Ionic versi 3, Apache Cordova, dan Angular. Aplikasi ini memungkinkan untuk ditulis menggunakan bahasa pemrograman seperti HTML, CSS, dan JavaScript.
+\section{Analisis Masalah Aplikasi Rugby Indonesia}
+
+Aplikasi Rugby Indoensia saat ini menggunakan \textit{framework} Ionic versi 3, Apache Cordova, dan Angular. \textit{Framework} yang digunakan oleh aplikasi Rugby Indonesia saat ini sudah cukup lawas, sehingga aplikasi Rugby Indonesia saat ini sudah tidak dapat dibuka kembali. Ketika membuka aplikasi Rugby Indonesia, pengguna akan terhambat pada bagian halaman utama di mana pada bagian tersebut, pengguna hanya akan melihat \textit{loading circle} yang terus berputar dengan tulisan `\textit{please wait}' seperti pada (Gambar \ref{fig:first-page-rugby-indonesia-app}).
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[scale=0.195]{Gambar/First-Page-Rugby-Indonesia-App.jpg}
+    \caption{Halaman Utama Aplikasi Rugby Indonesia}
+    \label{fig:first-page-rugby-indonesia-app}
+\end{figure}
 
 \section{Analisis Sistem Usulan}
-Aplikasi Rugby Indonesia yang akan dibangun hampir sama seperti aplikasi dengan sistem terkini, namun dengan tidak adanya halaman Fixture \& Results, Rugby Clubs dan fitur Push Notification dikarenakan website dari Rugby Indonesia sendiri yang sudah dipangkas sehingga tidak memiliki halaman-halaman tersebut.
+Aplikasi Rugby Indonesia yang akan dibangun hampir sama seperti aplikasi dengan sistem terkini, namun dengan tidak adanya halaman Fixture \& Results, Rugby Clubs dan fitur Push Notification dikarenakan website dari Rugby Indonesia sendiri yang sudah dipangkas sehingga tidak memiliki halaman-halaman tersebut. Maka dari itu, fungsi dari aplikasi Rugby Indonesia akan berubah, dan dapat dilihat seperti pada (Gambar \ref{fig:proposal-ucd-rugby-indonesia}).
 
-\begin{figure} [!h]
+\begin{figure} [H]
     \centering
-    \includegraphics{Gambar/UCD-Proposal-Rugby-App.png}
+    \includegraphics[scale=0.15]{Gambar/Proposal-Rugby-Indonesia-UCD.png}
     \caption{UCD Sistem Usulan Rugby Indonesia}
     \label{fig:proposal-ucd-rugby-indonesia}
 \end{figure}
 
 \subsection{Halaman Utama}
-Pada halaman utama, skenario dari penggunaan aplikasi Rubgy Indoensia pada halaman utama sama seperti tabel skenario halaman utama dari sistem terkini [\ref{tab:existing-scenario-welcome-page}]. Halaman ini memiliki beberapa komponen yang terdapat pada Ionic 7, komponen-komponen yang terdapat pada halaman utama ini yaitu komponen toolbar, content, serta card. 
+Pada halaman utama, skenario dari penggunaan aplikasi Rubgy Indoensia pada halaman utama sama seperti tabel skenario halaman utama dari sistem kini pada (Tabel \ref{tab:existing-scenario-welcome-page}). Halaman ini memiliki beberapa komponen yang terdapat pada Ionic 7, komponen tersebut berupa Toolbar, Content, dan Card. Analisis dari komponen yang digunakan terdapat pada (Gambar \ref{fig:homepage-analytics}).
 
 \begin{figure} [H]
     \centering
@@ -105,158 +120,156 @@ Pada halaman utama, skenario dari penggunaan aplikasi Rubgy Indoensia pada halam
     \label{fig:homepage-analytics}
 \end{figure}
 
-Pada saat aplikasi Rugby Indonesia dijalankan, secara default aplikasi akan membuka file main.tsx yang berada di app/src. File tersebut akan merender App.tsx untuk menjadi tampilan aplikasi. 
+% Pada saat aplikasi Rugby Indonesia dijalankan, secara default aplikasi akan membuka file main.tsx yang berada di app/src. File tersebut akan merender App.tsx untuk menjadi tampilan aplikasi. 
 
-\begin{lstlisting}[language=HTML, caption=Kode dari main.tsx, label=kode:main-tsx]
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './App';
-import { defineCustomElements } from '@ionic/pwa-elements/loader';
+% \begin{lstlisting}[language=HTML, caption=Kode dari main.tsx, label=kode:main-tsx]
+% import React from 'react';
+% import { createRoot } from 'react-dom/client';
+% import App from './App';
+% import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// Call the element loader before the render call
-defineCustomElements(window);
+% // Call the element loader before the render call
+% defineCustomElements(window);
 
-const container = document.getElementById('root');
-const root = createRoot(container!);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-\end{lstlisting}
+% const container = document.getElementById('root');
+% const root = createRoot(container!);
+% root.render(
+%   <React.StrictMode>
+%     <App />
+%   </React.StrictMode>
+% );
+% \end{lstlisting}
 
-Pada kode tersebut [\ref{kode:main-tsx}], metode \texttt{defineCustomElements} dipanggil dengan parameter \texttt{window}. metode defineCustomElements berfungsi sebagai element loader. Kode \texttt{document.getElementById} \texttt{('root')} digunakan untuk mendapatkan elemen dengan id `root'. Kode \texttt{createRoot} digunakan untuk membuat root element di mana kode ini akan menerima elemen yang akan dijadikan root.
+% Pada (Kode \ref{kode:main-tsx}), metode \texttt{defineCustomElements} dipanggil dengan parameter \texttt{window}. metode defineCustomElements berfungsi sebagai element loader. Kode \texttt{document.getElementById} \texttt{('root')} digunakan untuk mendapatkan elemen dengan id `root'. Kode \texttt{createRoot} digunakan untuk membuat root element di mana kode ini akan menerima elemen yang akan dijadikan root.
 
-Kode \texttt{root.render} digunakan untuk merender aplikasi React di dalam root element yang sudah dibuat. Kode \texttt{<React.StrictMode>} digunakan untuk mengaktifkan Strict Mode. Ini membantu mendeteksi masalah pada waktu kompilasi dan memberikan peringatan tambahan saat pengembangan. Kode \texttt{<App />} adalah komponen utama yang dirender di dalam Strict Mode. Komponen ini yang akan merender file App.tsx.
+% Kode \texttt{root.render} digunakan untuk merender aplikasi React di dalam root element yang sudah dibuat. Kode \texttt{<React.StrictMode>} digunakan untuk mengaktifkan Strict Mode. Ini membantu mendeteksi masalah pada waktu kompilasi dan memberikan peringatan tambahan saat pengembangan. Kode \texttt{<App />} adalah komponen utama yang dirender di dalam Strict Mode. Komponen ini yang akan merender file App.tsx.
 
-Pada file App.tsx, file ini akan melakukan route ke tiap halaman menggunakan \texttt{IonRouteOutlet} [\ref{subbab:router}]. Secara default, route utama dari App.tsx akan menuju ke dalam \texttt{path="/folder/:name"} di mana path ini akan membuka Page.tsx. Pengembang dapat mengubah path dari route tersebut dengan path yang dibutuhkan.
+% Pada file App.tsx, file ini akan melakukan route ke tiap halaman menggunakan \texttt{IonRouteOutlet} [\ref{subbab:router}]. Secara default, route utama dari App.tsx akan menuju ke dalam \texttt{path="/folder/:name"} di mana path ini akan membuka Page.tsx. Pengembang dapat mengubah path dari route tersebut dengan path yang dibutuhkan.
 
-\begin{lstlisting}[language=HTML, caption=Kode dari App.tsx, label=kode:app-tsx]
-import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact } from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
-import { Redirect, Route } from 'react-router-dom';
-import Menu from './components/Menu';
-import Page from './pages/Page';
+% \begin{lstlisting}[language=HTML, caption=Kode dari App.tsx, label=kode:app-tsx]
+% import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact } from '@ionic/react';
+% import { IonReactRouter } from '@ionic/react-router';
+% import { Redirect, Route } from 'react-router-dom';
+% import Menu from './components/Menu';
+% import Page from './pages/Page';
 
-/* Core CSS required for Ionic components to work properly */
-import '@ionic/react/css/core.css';
+% /* Core CSS required for Ionic components to work properly */
+% import '@ionic/react/css/core.css';
 
-/* Basic CSS for apps built with Ionic */
-import '@ionic/react/css/normalize.css';
-import '@ionic/react/css/structure.css';
-import '@ionic/react/css/typography.css';
+% /* Basic CSS for apps built with Ionic */
+% import '@ionic/react/css/normalize.css';
+% import '@ionic/react/css/structure.css';
+% import '@ionic/react/css/typography.css';
 
-/* Optional CSS utils that can be commented out */
-import '@ionic/react/css/padding.css';
-import '@ionic/react/css/float-elements.css';
-import '@ionic/react/css/text-alignment.css';
-import '@ionic/react/css/text-transformation.css';
-import '@ionic/react/css/flex-utils.css';
-import '@ionic/react/css/display.css';
+% /* Optional CSS utils that can be commented out */
+% import '@ionic/react/css/padding.css';
+% import '@ionic/react/css/float-elements.css';
+% import '@ionic/react/css/text-alignment.css';
+% import '@ionic/react/css/text-transformation.css';
+% import '@ionic/react/css/flex-utils.css';
+% import '@ionic/react/css/display.css';
 
-/* Theme variables */
-import './theme/variables.css';
+% /* Theme variables */
+% import './theme/variables.css';
 
-/* This import is for page */
-import LatestNews from './pages/latest_news/latest_news';
-import TeammatePhotos from './pages/teammate_photos/teammate_photos';
+% /* This import is for page */
+% import LatestNews from './pages/latest_news/latest_news';
+% import TeammatePhotos from './pages/teammate_photos/teammate_photos';
 
-setupIonicReact();
+% setupIonicReact();
 
-const App: React.FC = () => {
-  return (
-    <IonApp>
-      <IonReactRouter>
-        <IonSplitPane contentId="main">
-          <Menu />
-          <IonRouterOutlet id="main">
-            <Route path="/" exact={true}>
-              <Redirect to="/latest_news" />
-            </Route>
-            <Route path="/latest_news" exact={true}>
-              <LatestNews />
-            </Route>
-            <Route path="/teammate_photos" exact={true}>
-              <TeammatePhotos />
-            </Route>
-            <Route path="/folder/:name" exact={true}>
-              <Page />
-            </Route>
-          </IonRouterOutlet>
-        </IonSplitPane>
-      </IonReactRouter>
-    </IonApp>
-  );
-};
+% const App: React.FC = () => {
+%   return (
+%     <IonApp>
+%       <IonReactRouter>
+%         <IonSplitPane contentId="main">
+%           <Menu />
+%           <IonRouterOutlet id="main">
+%             <Route path="/" exact={true}>
+%               <Redirect to="/latest_news" />
+%             </Route>
+%             <Route path="/latest_news" exact={true}>
+%               <LatestNews />
+%             </Route>
+%             <Route path="/teammate_photos" exact={true}>
+%               <TeammatePhotos />
+%             </Route>
+%             <Route path="/folder/:name" exact={true}>
+%               <Page />
+%             </Route>
+%           </IonRouterOutlet>
+%         </IonSplitPane>
+%       </IonReactRouter>
+%     </IonApp>
+%   );
+% };
 
-export default App;
+% export default App;
 
-\end{lstlisting}
+% \end{lstlisting}
 
-Pada kode tersebut [\ref{kode:app-tsx}], terdapat metode \texttt{setupIonicReact()} yang berguna untuk mengkonfigurasi Ionic agar bekerja dengan React. Komponen \texttt{IonSplitPane} pada kode berguna untuk memisahkan panel menu dengan halaman. Komponen \texttt{IonRouterOutlet} pada kode berguna untuk melakukan routing ke halaman yang diinginkan. Pada kode ini, secara default aplikasi akan membuka halaman `Latest News' dikarenakan ketika path bernilai "/", maka halaman yang dibuka adalah halaman Latest News.
+% Pada kode tersebut [\ref{kode:app-tsx}], terdapat metode \texttt{setupIonicReact()} yang berguna untuk mengkonfigurasi Ionic agar bekerja dengan React. Komponen \texttt{IonSplitPane} pada kode berguna untuk memisahkan panel menu dengan halaman. Komponen \texttt{IonRouterOutlet} pada kode berguna untuk melakukan routing ke halaman yang diinginkan. Pada kode ini, secara default aplikasi akan membuka halaman `Latest News' dikarenakan ketika path bernilai "/", maka halaman yang dibuka adalah halaman Latest News.
 
-Pada file latest\_news.tsx, file ini akan mengambil berita dari \url{https://rugbyindonesia.or.id/berita/} dan akan ditampilkan pada halaman Latest News. Setiap berita yang terdapat pada halaman Latest News akan ditampilkan menggunakan \texttt{IonCard}.
+% Pada file latest\_news.tsx, file ini akan mengambil berita dari \url{https://rugbyindonesia.or.id/berita/} dan akan ditampilkan pada halaman Latest News. Setiap berita yang terdapat pada halaman Latest News akan ditampilkan menggunakan \texttt{IonCard}.
 
-\begin{lstlisting}[language=HTML, caption=Kode dari latest\_news.tsx, label=kode:latest-news-tsx]
-import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar, IonBackButton, IonCard, IonCardHeader, IonCardTitle, IonCardContent} from '@ionic/react';
-import './latest_news.css';
+% \begin{lstlisting}[language=HTML, caption=Kode dari latest\_news.tsx, label=kode:latest-news-tsx]
+% import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar, IonBackButton, IonCard, IonCardHeader, IonCardTitle, IonCardContent} from '@ionic/react';
+% import './latest_news.css';
 
-import bannerImage from '../../images/sub-header-news.png';
-import latestNews1 from '../../images/latest_news_image_1.jpeg';
-import homeIcon from '../../images/home_icon.png';
+% import bannerImage from '../../images/sub-header-news.png';
+% import latestNews1 from '../../images/latest_news_image_1.jpeg';
+% import homeIcon from '../../images/home_icon.png';
 
-const Page: React.FC = () => {
+% const Page: React.FC = () => {
 
-    return (
-        <IonPage>
-            <IonHeader>
-                <IonToolbar>
-                    <IonButtons slot="start">
-                        <a href='/latest_news'>
-                            <div className='home-icon'>
-                                <img src={homeIcon} alt="home-icon" />
-                            </div>
-                        </a> 
-                    </IonButtons>
-                    <IonButtons slot="end">
-                        <IonMenuButton />
-                    </IonButtons>
-                    <IonTitle>
-                        Persatuan Rugby
-                        Union Indonesia
-                    </IonTitle>
-                </IonToolbar>
-            </IonHeader>
-            <IonContent className="ion-padding">
-                <div className="news section">
-                    <img src = {bannerImage} alt='latest-news-banner'/>
-                </div>
-                <IonCard>
-                    <img alt='latest-news-image-1' src={latestNews1}/>
-                    <IonCardHeader>
-                        <IonCardTitle>Rugby Masuk Sekolah resmi dimulai di DKI Jakarta</IonCardTitle>
-                    </IonCardHeader>
+%     return (
+%         <IonPage>
+%             <IonHeader>
+%                 <IonToolbar>
+%                     <IonButtons slot="start">
+%                         <a href='/latest_news'>
+%                             <div className='home-icon'>
+%                                 <img src={homeIcon} alt="home-icon" />
+%                             </div>
+%                         </a> 
+%                     </IonButtons>
+%                     <IonButtons slot="end">
+%                         <IonMenuButton />
+%                     </IonButtons>
+%                     <IonTitle>
+%                         Persatuan Rugby
+%                         Union Indonesia
+%                     </IonTitle>
+%                 </IonToolbar>
+%             </IonHeader>
+%             <IonContent className="ion-padding">
+%                 <div className="news section">
+%                     <img src = {bannerImage} alt='latest-news-banner'/>
+%                 </div>
+%                 <IonCard>
+%                     <img alt='latest-news-image-1' src={latestNews1}/>
+%                     <IonCardHeader>
+%                         <IonCardTitle>Rugby Masuk Sekolah resmi dimulai di DKI Jakarta</IonCardTitle>
+%                     </IonCardHeader>
 
-                    <IonCardContent>
-                    Program Rugby Masuk Sekolah resmi dimulai di DKI Jakarta dengan serah terima Bola dan Baju Pelatih Rugby Masuk Sekolah dari PB PRUI ke PRUI DKI Jakarta pada Hari Sabtu, 25 November 2023 di Lapangan Pondok Bambu, Jakarta. Wakil Ketua II PB PRUI, Pak Agus Djamhoer menyerahkan paket Rugby Masuk Sekolah ini kepada Pak Tito Vau selaku Ketua PRUI DKI Jakarta pada acara Kejuaraan Daerah Rugby tingkat Pelajar DKI Jakarta. 
-                    <br></br><br></br>
-                    DKI Jakarta memiliki 17 pelatih yang sudah mengikuti sertifikasi pelatih Rugby Masuk Sekolah dan siap mengajarkan T1 Rugby ke seluruh tingkatan sekolah di Jakarta. Pada saat ini tercatat sudah lebih dari 13 sekolah di Jakarta dan jumlah sekolah ini akan terus ditingkatkan seiring dengan waktu program ini berjalan.
-                    </IonCardContent>
-                </IonCard>
-            </IonContent>
-        </IonPage>
-    );
-};
+%                     <IonCardContent>
+%                     Program Rugby Masuk Sekolah resmi dimulai di DKI Jakarta dengan serah terima Bola dan Baju Pelatih Rugby Masuk Sekolah dari PB PRUI ke PRUI DKI Jakarta pada Hari Sabtu, 25 November 2023 di Lapangan Pondok Bambu, Jakarta. Wakil Ketua II PB PRUI, Pak Agus Djamhoer menyerahkan paket Rugby Masuk Sekolah ini kepada Pak Tito Vau selaku Ketua PRUI DKI Jakarta pada acara Kejuaraan Daerah Rugby tingkat Pelajar DKI Jakarta. 
+%                     <br></br><br></br>
+%                     DKI Jakarta memiliki 17 pelatih yang sudah mengikuti sertifikasi pelatih Rugby Masuk Sekolah dan siap mengajarkan T1 Rugby ke seluruh tingkatan sekolah di Jakarta. Pada saat ini tercatat sudah lebih dari 13 sekolah di Jakarta dan jumlah sekolah ini akan terus ditingkatkan seiring dengan waktu program ini berjalan.
+%                     </IonCardContent>
+%                 </IonCard>
+%             </IonContent>
+%         </IonPage>
+%     );
+% };
 
-export default Page;
-\end{lstlisting}
+% export default Page;
+% \end{lstlisting}
 
-Kode ini \ref{kode:latest-news-tsx} akan menampilkan halaman Latest News yang memiliki komponen toolbar, button, content, dan card. Content dari halaman ini berisi berita-berita yang terdapat pada \url{https://rugbyindonesia.or.id/berita/}.
+% Kode ini \ref{kode:latest-news-tsx} akan menampilkan halaman Latest News yang memiliki komponen toolbar, button, content, dan card. Content dari halaman ini berisi berita-berita yang terdapat pada \url{https://rugbyindonesia.or.id/berita/}.
 
 \subsection{Halaman Teammate Photos}
-Pada halaman Teammate Photos, skenario dari aplikasi Rugby Indonesia sama dengan skenario dari halaman Teammate Photos yang sudah ada [\ref{tab:existing-scenario-teammate-photos-page}], namun dengan adanya sedikit penambahan, yaitu skenario di saat pengguna mengupload gambar.
-Penambahan ini dilakukan karena peneliti tidak menemukan gambar di saat pengguna mengunggah gambar.
-
+Pada halaman Teammate Photos, skenario dari aplikasi Rugby Indonesia sama dengan skenario dari halaman Teammate Photos yang sudah ada pada (Tabel \ref{tab:existing-scenario-teammate-photos-page}), namun dengan adanya sedikit penambahan, yaitu skenario di saat pengguna mengupload gambar. Penambahan ini dilakukan karena peneliti tidak menemukan gambar di saat pengguna melakukan \textit{upload} gambar. Penambahan dari skenario disaat pengguna melakukan upload gambar terdapat pada (Tabel \ref{tab:usulan-skenario-halaman-teammate-photos}).
 \begin{table} [H]
     \centering
     \caption{Tabel Skenario saat Pengguna Mengupload Gambar}
@@ -275,9 +288,9 @@ Penambahan ini dilakukan karena peneliti tidak menemukan gambar di saat pengguna
     \label{tab:usulan-skenario-halaman-teammate-photos}
 \end{table}
 
-Skenario tersebut [\ref{tab:usulan-skenario-halaman-teammate-photos}] juga berlaku ketika pengguna menekan tombol ``LOAD FROM LIBRARY'', hanya saja perbedaannya terdapat pada reaksi sistem, yaitu Aplikasi akan membuka gallery dari smartphone pengguna.
+Skenario pada (Tabel \ref{tab:usulan-skenario-halaman-teammate-photos}) juga berlaku ketika pengguna menekan tombol ``LOAD FROM LIBRARY'', hanya saja perbedaannya terdapat pada reaksi sistem, yaitu Aplikasi akan membuka \textit{gallery} dari \textit{smartphone} pengguna.
 
-Pada halaman Teammate Photos, terdapat beberapa komponen dari Ionic 7 yang digunakan. Halaman ini memiliki beberapa komponen, yaitu toolbar, button, content, dan juga card.
+Pada halaman Teammate Photos, terdapat beberapa komponen dari Ionic 7 yang digunakan. Halaman ini memiliki beberapa komponen, yaitu toolbar, button, content, dan juga card. Analisis dari komponen yang digunakan terdapat pada (Gambar \ref{fig:teammate-photos-analytics}).
 
 \begin{figure} [H]
     \centering
@@ -286,160 +299,160 @@ Pada halaman Teammate Photos, terdapat beberapa komponen dari Ionic 7 yang digun
     \label{fig:teammate-photos-analytics}
 \end{figure}
 
-Pada saat pengguna memilih menu Teammate Photos, aplikasi akan menjalankan file teammate\_photos.tsx. File ini memiliki fungsi untuk menangkap gambar, dan melihat hasil tangkapan gambar milik pengguna tersebut atau pun orang lain.
+% Pada saat pengguna memilih menu Teammate Photos, aplikasi akan menjalankan file teammate\_photos.tsx. File ini memiliki fungsi untuk menangkap gambar, dan melihat hasil tangkapan gambar milik pengguna tersebut atau pun orang lain.
 
-\begin{lstlisting}[language=HTML, caption=Kode dari teammate\_photos.tsx, label=kode:teammate-photos-tsx]
-import React, { useState } from 'react';
-import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar, IonBackButton, IonButton, IonIcon} from '@ionic/react';
-import { Camera, Photo, CameraResultType, CameraSource } from '@capacitor/camera';
-import { Directory, Filesystem } from '@capacitor/filesystem';
+% \begin{lstlisting}[language=HTML, caption=Kode dari teammate\_photos.tsx, label=kode:teammate-photos-tsx]
+% import React, { useState } from 'react';
+% import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar, IonBackButton, IonButton, IonIcon} from '@ionic/react';
+% import { Camera, Photo, CameraResultType, CameraSource } from '@capacitor/camera';
+% import { Directory, Filesystem } from '@capacitor/filesystem';
 
-import './teammate_photos.css';
+% import './teammate_photos.css';
 
-import bannerImage from '../../images/sub-header-photo.png';
-import homeIcon from '../../images/home_icon.png';
+% import bannerImage from '../../images/sub-header-photo.png';
+% import homeIcon from '../../images/home_icon.png';
 
-import { PhotoImages } from "./photoImages";
-import PhotoGallery from './photoGallery';
-import { appsSharp, camera, menuSharp } from 'ionicons/icons';
+% import { PhotoImages } from "./photoImages";
+% import PhotoGallery from './photoGallery';
+% import { appsSharp, camera, menuSharp } from 'ionicons/icons';
 
-const Page: React.FC = () => {
-    const [images, setImages] = useState<PhotoImages[]>([]);
+% const Page: React.FC = () => {
+%     const [images, setImages] = useState<PhotoImages[]>([]);
 
-    const takePicture = async () => {
-        const image = await Camera.getPhoto({
-            quality: 90,
-            allowEditing: true,
-            resultType: CameraResultType.Uri
-        });
+%     const takePicture = async () => {
+%         const image = await Camera.getPhoto({
+%             quality: 90,
+%             allowEditing: true,
+%             resultType: CameraResultType.Uri
+%         });
     
-        const fileName = new Date().getTime() + '.jpeg';
+%         const fileName = new Date().getTime() + '.jpeg';
         
-        const savedFileImage = await savePicture(image, fileName);
-        var imageUrl = savedFileImage.filePath!;
-        console.log(imageUrl);
-        // Can be set to the src of an image now
-        // imageElement.src = imageUrl;
-        setImages([...images, savedFileImage]);
+%         const savedFileImage = await savePicture(image, fileName);
+%         var imageUrl = savedFileImage.filePath!;
+%         console.log(imageUrl);
+%         // Can be set to the src of an image now
+%         // imageElement.src = imageUrl;
+%         setImages([...images, savedFileImage]);
 
-    };
+%     };
 
-    const savePicture = async(photo: Photo, fileName: string):Promise<PhotoImages> => {
-        let base64data:string;
-        base64data = await base64FromPath(photo.webPath!);
+%     const savePicture = async(photo: Photo, fileName: string):Promise<PhotoImages> => {
+%         let base64data:string;
+%         base64data = await base64FromPath(photo.webPath!);
 
-        const savedPicture = await Filesystem.writeFile({
-            path: fileName,
-            directory: Directory.Data,
-            data: base64data
-        });
+%         const savedPicture = await Filesystem.writeFile({
+%             path: fileName,
+%             directory: Directory.Data,
+%             data: base64data
+%         });
 
-        return{
-            filePath: fileName,
-            webviewPath: photo.webPath
-        }
-    }
+%         return{
+%             filePath: fileName,
+%             webviewPath: photo.webPath
+%         }
+%     }
 
-    async function base64FromPath(path:string): Promise<string>{
-        const response = await fetch(path);
-        const blob = await response.blob();
+%     async function base64FromPath(path:string): Promise<string>{
+%         const response = await fetch(path);
+%         const blob = await response.blob();
 
-        return new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.onerror = reject;
-            reader.onload = () => {
-                if (typeof reader.result === 'string')
-                {
-                    resolve(reader.result);
-                }
-                else
-                {
-                    reject('This method did not return a string');
-                }
-            };
+%         return new Promise((resolve, reject) => {
+%             const reader = new FileReader();
+%             reader.onerror = reject;
+%             reader.onload = () => {
+%                 if (typeof reader.result === 'string')
+%                 {
+%                     resolve(reader.result);
+%                 }
+%                 else
+%                 {
+%                     reject('This method did not return a string');
+%                 }
+%             };
 
-            reader.readAsDataURL(blob);
-        })
-    }
+%             reader.readAsDataURL(blob);
+%         })
+%     }
 
-    return (
-        <IonPage>
-            <IonHeader>
-                <IonToolbar>
-                    <IonButtons slot="start">
-                        <a href='/latest_news'>
-                            <div className='home-icon'>
-                                <img src={homeIcon} alt="home-icon" />
-                            </div>
-                        </a>                     
-                    </IonButtons>
-                    <IonButtons slot="end">
-                        <IonMenuButton />
-                    </IonButtons>
-                    <IonTitle>
-                        Persatuan Rugby
-                        Union Indonesia
-                    </IonTitle>
-                </IonToolbar>
-            </IonHeader>
-            <IonContent className="ion-padding">
-                <div className='teammate-photos-banner'>
-                    <img src={bannerImage} alt="Teammate-Photos-Banner" />
-                </div>
-                <br></br>
-                <IonButton color="primary" expand='block' onClick={onClick => takePicture()}>
-                    <IonIcon slot="start" icon={camera}></IonIcon>
-                    Take Photo
-                </IonButton> {/* Use the onClick prop directly */}
+%     return (
+%         <IonPage>
+%             <IonHeader>
+%                 <IonToolbar>
+%                     <IonButtons slot="start">
+%                         <a href='/latest_news'>
+%                             <div className='home-icon'>
+%                                 <img src={homeIcon} alt="home-icon" />
+%                             </div>
+%                         </a>                     
+%                     </IonButtons>
+%                     <IonButtons slot="end">
+%                         <IonMenuButton />
+%                     </IonButtons>
+%                     <IonTitle>
+%                         Persatuan Rugby
+%                         Union Indonesia
+%                     </IonTitle>
+%                 </IonToolbar>
+%             </IonHeader>
+%             <IonContent className="ion-padding">
+%                 <div className='teammate-photos-banner'>
+%                     <img src={bannerImage} alt="Teammate-Photos-Banner" />
+%                 </div>
+%                 <br></br>
+%                 <IonButton color="primary" expand='block' onClick={onClick => takePicture()}>
+%                     <IonIcon slot="start" icon={camera}></IonIcon>
+%                     Take Photo
+%                 </IonButton> {/* Use the onClick prop directly */}
 
-                <IonButton color='primary' expand='block'>
-                    <IonIcon slot="start" icon={appsSharp}></IonIcon>
-                    Load from Library
-                </IonButton>
+%                 <IonButton color='primary' expand='block'>
+%                     <IonIcon slot="start" icon={appsSharp}></IonIcon>
+%                     Load from Library
+%                 </IonButton>
 
-                <PhotoGallery photos={images} />
-            </IonContent>
-        </IonPage>
-    );
-};
+%                 <PhotoGallery photos={images} />
+%             </IonContent>
+%         </IonPage>
+%     );
+% };
 
-export default Page;
+% export default Page;
 
-\end{lstlisting}
+% \end{lstlisting}
 
-Pada kode tersebut [\ref{kode:teammate-photos-tsx}], kode \texttt{const [images, setImages] = useState<PhotoImages[]>} \texttt{([]);} menggunakan useState untuk menyimpan daftar foto yang diambil dalam bentuk objek PhotoImages. Fungsi \texttt{takePicture} menggunakan Capacitor Camera untuk mengambil foto. 
+% Pada kode tersebut [\ref{kode:teammate-photos-tsx}], kode \texttt{const [images, setImages] = useState<PhotoImages[]>} \texttt{([]);} menggunakan useState untuk menyimpan daftar foto yang diambil dalam bentuk objek PhotoImages. Fungsi \texttt{takePicture} menggunakan Capacitor Camera untuk mengambil foto. 
 
-\begin{lstlisting}[language=HTML, caption=Kode dari photoImages.tsx, label=kode:photo-image-tsx]
-export interface PhotoImages
-{
-    filePath: string;
-    webviewPath?: string;
-}
+% \begin{lstlisting}[language=HTML, caption=Kode dari photoImages.tsx, label=kode:photo-image-tsx]
+% export interface PhotoImages
+% {
+%     filePath: string;
+%     webviewPath?: string;
+% }
 
-\end{lstlisting}
+% \end{lstlisting}
 
-\begin{lstlisting}[language=HTML, caption=Kode dari photoGallery.tsx, label=kode:photo-gallery-tsx]
-import { IonCol, IonGrid, IonImg, IonRow } from "@ionic/react";
-import { PhotoImages } from "./photoImages";
-import React from "react";
+% \begin{lstlisting}[language=HTML, caption=Kode dari photoGallery.tsx, label=kode:photo-gallery-tsx]
+% import { IonCol, IonGrid, IonImg, IonRow } from "@ionic/react";
+% import { PhotoImages } from "./photoImages";
+% import React from "react";
 
-type Props = {
-    photos: PhotoImages[],
-}
+% type Props = {
+%     photos: PhotoImages[],
+% }
 
-const PhotoGallery: React.FC<Props> =({photos}) => {
-    return (
-        <IonGrid>
-            <IonRow>
-                {photos.map((photo, idx) =>(
-                    <IonCol size = "6" key={idx}>
-                        <IonImg src={photo.webviewPath}/>
-                    </IonCol>
-                ))}
-            </IonRow>
-        </IonGrid>
-    );
-}
+% const PhotoGallery: React.FC<Props> =({photos}) => {
+%     return (
+%         <IonGrid>
+%             <IonRow>
+%                 {photos.map((photo, idx) =>(
+%                     <IonCol size = "6" key={idx}>
+%                         <IonImg src={photo.webviewPath}/>
+%                     </IonCol>
+%                 ))}
+%             </IonRow>
+%         </IonGrid>
+%     );
+% }
 
-export default PhotoGallery;
-\end{lstlisting}
+% export default PhotoGallery;
+% \end{lstlisting}
