@@ -1,24 +1,23 @@
 %versi 3 (22-07-2020)
+
 \chapter{Landasan Teori}
 \label{chap:teori}
 
-Pada bab 2 ini, akan dijelaskan dasar teori terkait dengan aplikasi Rugby Indonesia saat ini, Ionic dan Capacitor. 
-
-\section{Rugby Indonesia App}
+\section{Aplikasi Rugby Indonesia}
 \label{sec:skripsi} 
-    Aplikasi Rugby Indonesia merupakan aplikasi resmi dari Persatuan Rugby Union Indonesia yang dapat memberikan informasi terbaru mengenai olahraga rugby di Indonesia. Aplikasi ini dapat memberikan notifikasi langsung mengenai berita terakhir, turnamen yang akan datang, dan informasi lainnya. Selain itu, aplikasi ini juga memungkinkan pengguna untuk mengambil gambar dan menunjukkan dukungan mereka dengan rekan-rekan penggemar rugby lainnya. Terdapat juga aplikasi multimedia pengenalan olahraga rugby berbasis Android yang dapat memberikan informasi sejarah, peraturan, dan peralatan serta tempat-latihan rugby di beberapa Kabupaten/Kota. Aplikasi Rugby Indonesia tersedia di Google Play Store dan dapat diunduh secara gratis.
+    Aplikasi Rugby Indonesia merupakan aplikasi resmi dari Persatuan Rugby Union Indonesia yang dapat memberikan informasi terbaru mengenai olahraga \textit{rugby} di Indonesia. Aplikasi ini dapat memberikan notifikasi langsung mengenai berita terakhir, turnamen yang akan datang, dan informasi lainnya. Selain itu, aplikasi ini juga memungkinkan pengguna untuk mengambil gambar dan menunjukkan dukungan mereka dengan rekan-rekan penggemar \textit{rugby} lainnya dengan meng-\textit{upload} gambar ke dalam halaman \textit{Teammate Photos}. Terdapat juga aplikasi multimedia pengenalan olahraga \textit{rugby} berbasis Android yang dapat memberikan informasi sejarah, peraturan, dan peralatan serta tempat-latihan \textit{rugby} di beberapa Kabupaten/Kota. Aplikasi Rugby Indonesia tersedia di Google Play Store dan dapat diunduh secara gratis. Gambar dari halaman Rugby Indonesia dapat dilihat pada Gambar \ref{fig:rugby-halaman-label}.
 
-    \begin{figure} [!h]
-        \centering
-        \includegraphics[scale=0.725]{Gambar/Rugby-Indonesia-App-UI.png}
-        \caption[Halaman aplikasi Rugby Indonesia]{Halaman-halaman dari aplikasi Rugby Indonesia}
-        \label{fig:halaman-rugby-indonesia}
-    \end{figure}
+    % \begin{figure} [!h]
+    %     \centering
+    %     \includegraphics[scale=0.725]{Gambar/Rugby-Indonesia-App-UI.png}
+    %     \caption[Halaman aplikasi Rugby Indonesia]{Halaman-halaman dari aplikasi Rugby Indonesia}
+    %     \label{fig:halaman-rugby-indonesia}
+    % \end{figure}
 
     Fitur-fitur yang ada pada aplikasi Rugby Indonesia saat ini yaitu:
 
     \begin{enumerate}
-        \item Halaman \textit{Latest News} yang diambil dari \url{https://rugbyindonesia.or.id/berita/} dengan memanfaatkan protokol RSS.
+        \item Halaman \textit{Latest News} yang diambil dari \url{https://rugbyindonesia.or.id/berita/} dengan memanfaatkan protokol RSS. 
         \item Halaman \textit{Fixture \& Results}.
         \item Halaman \textit{Teammate Photos} dengan fungsi:
         \begin{itemize}
@@ -29,35 +28,139 @@ Pada bab 2 ini, akan dijelaskan dasar teori terkait dengan aplikasi Rugby Indone
     \item Halaman \textit{Rugby Clubs} yang memiliki fungsi di mana pengguna dapat langsung mendaftar ke dalam \textit{Rugby Clubs} yang berada di Indonesia.
     \item Fungsi \textit{Push Notifications}.
     \end{enumerate}
-% Rencananya akan diisi dengan penjelasan umum mengenai buku skripsi.
+    
+\section{\texorpdfstring{ReactJS~\cite{react-docs}}{ReactJS}}
+\label{sec:reactJS}
 
-% \dtext{11-12} 
+ReactJS atau React adalah sebuah \textit{library} JavaScript yang digunakan untuk membangun \textit{user interface} yang interaktif. ReactJS berisi kumpulan potongan kode JavaScript yang disebut ``komponen'' yang bisa digunakan berulang kali untuk mendesain antarmuka pengguna. ReactJS bukanlah \textit{framework} JavaScript, karena hanya bertugas untuk me-\textit{render} komponen area tampilan aplikasi. ReactJS dapat digunakan untuk membuat aplikasi web dan \textit{mobile}.
 
-% \section{\LaTeX}
-\section{ReactJS}
-\label{sec:latex}
+\subsection{Hooks}
+\label{subsec:hooks}
+Hooks adalah fitur yang memungkinkan penggunaan \textit{state} dan fitur React lainnya tanpa membuat sebuah kelas. Hooks berfungsi untuk ``mengaitkan'' \textit{state} dan fitur-fitur \textit{lifecycle} React dari \textit{function component}.
 
-% Mengapa menggunakan \LaTeX{} untuk buku skripsi dan apa keunggulan/kerugiannya bagi mahasiswa dan pembuat template. 
+\subsubsection{State Hooks}
+\label{subsubsec:state-hooks}
+State Hooks adalah salah satu jenis Hooks yang memungkinkan pengembang untuk menggunakan \textit{state} pada \textit{function component} tanpa harus membuat sebuah kelas. Cara untuk menggunakan State Hooks terdapat pada (Kode \ref{kode:state-hooks-example}), di mana `useState' digunakan untuk mendeklarasikan sebuah variabel \textit{state} yang dapat langsung di \textit{update}.
+\begin{lstlisting}[language=HTML, caption=Contoh Potongan Kode State Hooks, label=kode:state-hooks-example]
+function ImageGallery() {
+  const [index, setIndex] = useState(0);
+  // ...
+\end{lstlisting}
 
-% \dtext{13-14}
+\subsubsection{Context Hooks}
+\label{subsubsec:context-hooks}
+Context Hooks adalah salah satu jenis Hooks yang memungkinkan pengembang untuk menerima informasi dari \textit{parent} yang jauh tanpa meneruskannya sebagai properti. Cara untuk menggunakan Context Hooks terdapat pada (Kode \ref{kode:context-hooks-example}). Pada kode tersebut, `useContext' digunakan untuk berlangganan pada sebuah \textit{context} yang berada pada komponen.
+\begin{lstlisting}[language=HTML, caption=Contoh Potongan Kode Context Hooks, label=kode:context-hooks-example]
+function Button() {
+  const theme = useContext(ThemeContext);
+  // ...
+\end{lstlisting}
 
-ReactJS atau React adalah sebuah library JavaScript yang digunakan untuk membangun user interface yang interaktif. ReactJS berisi kumpulan snippet kode JavaScript yang disebut "komponen" yang bisa digunakan berulang kali untuk mendesain antarmuka pengguna. ReactJS bukanlah framework JavaScript, karena hanya bertugas untuk merender komponen area tampilan aplikasi. ReactJS dapat digunakan untuk membuat aplikasi web dan mobile.
+\subsubsection{Ref Hooks}
+\label{subsubsec:ref-hooks}
+Ref Hook pada React adalah salah satu dari beberapa Hooks bawaan yang memungkinkan penggunaan \textit{refs} dalam komponen fungsional. \textit{Ref} digunakan untuk mengakses DOM atau nilai dari elemen \textit{child} dalam React. Cara untuk menggunakan Ref Hooks terdapat pada (Kode \ref{kode:ref-hooks-example}). Pada kode tersebut, `useRef' digunakan untuk mereferensikan sebuah nilai yang tidak digunakan dalam \textit{rendering}.
+\begin{lstlisting}[language=HTML, caption=Contoh Potongan Kode Ref Hooks, label=kode:ref-hooks-example]
+function Form() {
+  const inputRef = useRef(null);
+  // ...
+\end{lstlisting}
 
-React dibuat oleh Jordan Walke, seorang insinyur perangkat lunak di Facebook (sekarang bernama Meta), yang merilis prototipe awal React yang disebut ``FaxJS''. Dia terinspirasi dari bahasa pemrograman XHP, perpustakaan komponen HTML untuk PHP. React pertama kali diterapkan di Facebook's News Feed pada tahun 2011 dan kemudian di Instagram pada tahun 2012. React bersifat open-source di JSConf US pada Mei 2013.
+\subsubsection{Effect Hooks}
+\label{subsubsec:effect-hooks}
+Effect Hooks adalah fungsi yang memungkinkan agar sebuah komponen dapat terhubung dan tersinkronisasi dengan sistem eksternal seperti pengambilan data, berlangganan data, atau mengubah DOM dari sebuah \textit{function component}. Cara penggunaan dari Effect Hooks terdapat pada (Kode \ref{kode:effect-hooks-example}). Pada kode tersebut, `useEffect' berfungsi untuk menghubungkan komponen ke sistem eksternal.
 
-Beberapa fitur dan kelebihan ReactJS antara lain:
+\begin{lstlisting}[language=HTML, caption=Contoh Potongan Kode Effect Hooks, label=kode:effect-hooks-example]
+function ChatRoom({ roomId }) {
+  useEffect(() => {
+    const connection = createConnection(roomId);
+    connection.connect();
+    return () => connection.disconnect();
+  }, [roomId]);
+  // ...
+\end{lstlisting}
 
+\subsubsection{Performance Hooks}
+\label{subsubsec:perf-hooks}
+Performance Hooks adalah fungsi yang mengoptimalkan performa \textit{render} ulang dengan cara melewatkan pekerjaan yang tidak diperlukan. Pekerjaan ini biasanya berupa data yang tidak berubah dari \textit{render} sebelumnya. Cara penggunaan Performance Hooks terdapat pada (Kode \ref{kode:performance-hooks-example}). Pada kode tersebut, `useMemo' berfungsi untuk menyimpan hasil perhitungan yang besar ke dalam \textit{cache}.
+
+\begin{lstlisting}[language=HTML, caption=Contoh Potongan Kode Performance Hooks, label=kode:performance-hooks-example]
+function TodoList({ todos, tab, theme }) {
+  const visibleTodos = useMemo(() => filterTodos(todos, tab), [todos, tab]);
+  // ...
+}
+\end{lstlisting}
+
+\subsubsection{Resource Hooks}
+\label{subsubsec:resource-hooks}
+Resource Hooks dapat diakses oleh komponen tanpa menjadi bagian dari \textit{state}. Cara penggunaan Resource Hooks terdapat pada (Kode \ref{kode:resource-hooks-example}).
+
+\begin{lstlisting}[language=HTML, caption=Contoh Potongan Kode Resource Hooks, label=kode:resource-hooks-example]
+function MessageComponent({ messagePromise }) {
+  const message = use(messagePromise);
+  const theme = use(ThemeContext);
+  // ...
+}
+\end{lstlisting}
+
+\subsection{Components}
+Components pada React adalah bagian-bagian kecil yang memungkinkan pengembang untuk membagi antarmuka pengguna menjadi bagian-bagian independen dan dapat digunakan kembali. Components dapat berupa kelas atau fungsi. Komponen menerima masukan yang disebut ``props'' dan mengembalikan elemen React yang mendefinisikan tampilan. Terdapat 4 komponen yang terdapat pada React, yaitu:
 \begin{itemize}
-    \item Reusable Components: Dengan ReactJS, Anda bisa menggunakan lagi komponen yang sudah dikembangkan menjadi aplikasi. Sebab, ReactJS adalah library yang open-source, sehingga Anda bisa membangun komponen siap pakai, yang akan mempercepat proses development aplikasi web kompleks.
-    \item Virtual DOM: ReactJS menggunakan Virtual DOM, yang memungkinkan perubahan pada tampilan aplikasi hanya terjadi pada bagian yang berubah saja, tanpa harus merender ulang seluruh tampilan aplikasi. Hal ini membuat aplikasi menjadi lebih cepat dan efisien.
-    \item SEO-Friendly: ReactJS bisa memaksimalkan optimisasi mesin pencari (SEO) aplikasi web dengan meningkatkan performanya. Sebab, implementasi Virtual DOM merupakan salah satu faktor yang memengaruhi kecepatan.
-    \item Learn Once, Write Anywhere: ReactJS tidak membuat asumsi tentang sisa stack pengguna, sehingga pengguna dapat mengembangkan fitur baru di React tanpa menulis ulang kode yang ada. React juga dapat me-render di server dengan menggunakan Node dan menjalankan aplikasi seluler menggunakan React Native.
-    \item UI Interaktif: ReactJS dapat disebut sebagai “Learn One – Write Anywhere” library, karena baik dalam pengembangan aplikasi web dan mobile, React mengikuti pola desain yang sama, memfasilitasi proses transisi. Menggunakan JavaScript polos dan React, Anda dapat membuat UI yang kaya untuk aplikasi asli, serta didukung oleh platform iOS dan Android. 
+    \item <Fragment>
+    \item <Profiler>
+    \item <Suspense>
+    \item <StrictMode>
 \end{itemize}
 
-Dengan kelebihan-kelebihan tersebut, ReactJS menjadi pilihan yang masuk akal baik untuk startup maupun perusahaan.
+\subsubsection{Fragment}
+Fragment pada komponen React adalah fitur yang memungkinkan pengembang untuk mengelompokkan sejumlah elemen anak tanpa perlu menambahkan \textit{node} ekstra ke DOM. Hal ini berguna ketika ingin mengembalikan beberapa elemen dari sebuah komponen tanpa harus membungkusnya dalam sebuah elemen DOM tambahan seperti `\texttt{div}'. Fragment juga dapat digunakan untuk me-\textit{render} beebrapa elemen secara bersamaan tanpa harus menggunakan `\texttt{<div>}'. Ada dua cara untuk mendefinisikan Fragment, yaitu dengan menggunakan \texttt{<React.Fragment>} atau dengan menggunakan sintaksis singkat \texttt{<>...</>}. Cara untuk penggunaan komponen Fragment terdapat pada contoh (Kode \ref{kode:fragment-example}).
 
-\section{Ionic 7 Framework}
+\begin{lstlisting}[language=HTML, caption=Contoh Potongan Kode Fragment, label=kode:fragment-example]
+function Post() {
+  return (
+    <>
+      <PostTitle />
+      <PostBody />
+    </>
+  );
+}
+\end{lstlisting}
+
+Pada kode tersebut, Fragment akan mengelompokan dua elemen secara bersamaan menjadi satu grup dan akan mengembalikan grup yang berisi `\texttt{<PostTitle>}' dan `\texttt{<PostBody>}'.
+
+\subsubsection{Profiler}
+Profiler adalah komponen yang digunakan untuk mengukur seberapa sering sebuah aplikasi React melakukan rendering dan seberapa besar biaya yang dikeluarkan untuk melakukan \textit{rendering} tersebut. Cara penggunaan komponen Profiler terdapat pada contoh (Kode \ref{kode:profiler-example}).
+
+\begin{lstlisting}[language=HTML, caption=Contoh Potongan Kode Profiler, label=kode:profiler-example]
+<Profiler id="App" onRender={onRender}>
+  <App />
+</Profiler>
+\end{lstlisting}
+
+\subsubsection{Suspense}
+Suspense adalah fitur yang memungkinkan penundaan \textit{render} komponen sampai data yang diperlukan tersedia. Fitur ini berguna untuk meningkatkan responsivitas aplikasi dengan membiarkan komponen me-\textit{render} terlebih dahulu sebelum data siap. Cara penggunaan komponen Suspense terdapat pada contoh (Kode \ref{kode:suspense-example}).
+
+\begin{lstlisting}[language=HTML, caption=Contoh Potongan Kode Suspense, label=kode:suspense-example]
+<Suspense fallback={<Loading />}>
+  <SomeComponent />
+</Suspense>
+\end{lstlisting}
+
+\subsubsection{StrictMode}
+StrictMode adalah sebuah komponen yang digunakan untuk menyoroti potensi masalah dalam sebuah aplikasi. Mode ini tidak berdampak dalam pembangunan produksi dan dapat diaktifkan untuk bagian-bagian tertentu dalam aplikasi. StrictMode membantu dalam mengidentifikasi komponen-komponen dengan siklus hidup yang tidak aman dan melakukan berbagai pemeriksaan tambahan untuk turunannya. Mode ini berguna saat mengembangkan kode baru atau melakukan \textit{debugging}. StrictMode dapat diterapkan pada bagian mana pun dalam aplikasi, bukan hanya pada keseluruhan aplikasi. Mode ini membantu dalam menulis kode React dengan cara yang lebih baik dengan memberikan peringatan terkait praktik terbaik. Mode ini juga dapat digunakan baik pada komponen fungsional maupun kelas. Namun, StrictMode me-\textit{render} setiap komponen dalam aplikasi dua kali, sehingga sebaiknya hanya digunakan saat pengembangan atau \textit{debugging}. Cara untuk menggunakan StrictMode terdapat pada contoh (Kode \ref{kode:strict-mode-example}). Pada kode tersebut, apabila terjadi error pada `\texttt{<App />}', maka React akan memunculkan pesan error sebelum `\texttt{<App />}' di-\textit{render}.
+
+\begin{lstlisting}[language=HTML, caption=Contoh Potongan Kode StrictMode, label=kode:strict-mode-example]
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+
+const root = createRoot(document.getElementById('root'));
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
+\end{lstlisting}
+
+\section{\texorpdfstring{Ionic 7 Framework~\cite{ionic-docs}}{Ionic 7 Framework}}
 \label{sec:template}
  
 % Akan dipaparkan bagaimana menggunakan template ini, termasuk petunjuk singkat membuat referensi, gambar dan tabel.
@@ -65,22 +168,15 @@ Dengan kelebihan-kelebihan tersebut, ReactJS menjadi pilihan yang masuk akal bai
  
 % \dtext{15/-16}
 
-Ionic 7 adalah sebuah framework untuk membangun aplikasi mobile hybrid menggunakan HTML5, CSS, dan AngularJS. Framework ini dirilis pada tanggal 29 Maret 2023 dan memiliki beberapa perbaikan yang diusulkan oleh komunitas Ionic. Beberapa fitur baru di Ionic 7 antara lain:
-
-\begin{itemize}
-    \item Inline Overlays: Cara yang lebih efisien untuk bekerja dengan form-control seperti Toggle atau Input. Komponen Item dan Label tidak lagi diperlukan, dan setiap form-control menangani konten label secara langsung. Perubahan ini mengurangi boilerplate kode dengan menghilangkan persyaratan ion-item dan ion-label.
-    \item Performa yang Lebih Baik: Ionic 7 secara signifikan meningkatkan performa Tabs. Pada Ionic React dan Ionic Vue, pengembang dapat mengharapkan peningkatan performa hingga 70\% saat beralih tab. Pengembang Ionic Angular dapat mengharapkan waktu inisialisasi komponen Ionic yang lebih baik berkat optimasi di Stencil.
-    \item Kompatibilitas Vite yang Lebih Baik: Ionic 7 menghapus titik masuk Common JS untuk Ionic React dan Ionic Vue untuk membuat setiap paket lebih mudah digunakan dengan Vite dan Vitest.
-\end{itemize}
-Ionic 7 mendukung Angular 14+, React 17+, dan Vue 3.0.6+.
+Ionic 7 adalah sebuah \textit{framework} untuk membangun aplikasi \textit{mobile hybrid} menggunakan HTML5, CSS, dan JavaScript. Ionic 7 mendukung Angular 14+, React 17+, dan Vue 3.0.6+. \textit{Framework} ini dapat digunakan secara gratis dan juga bersifat \textit{open-source}, baik digunakan oleh pribadi maupun komersial.
 
 \subsection{UI Components}
-UI Components pada Ionic 7 adalah kumpulan komponen yang digunakan untuk membangun antarmuka pengguna aplikasi mobile hybrid. Komponen-komponen ini memungkinkan pengembang untuk dengan cepat membangun antarmuka pengguna yang menarik dan responsif. Komponen yang terdapat pada Ionic 7 yaitu:
+UI Components adalah kumpulan komponen yang digunakan untuk membangun antarmuka pengguna aplikasi \textit{mobile hybrid}. Komponen-komponen ini memungkinkan pengembang untuk membangun antarmuka pengguna yang menarik dan responsif dengan cepat. Beberapa komponen yang terdapat pada Ionic 7 diantaranya:
 
 \subsubsection{Action Sheet}
-Action Sheet (ion-action-sheet) merupakan sebuah komponen yang berguna untuk memunculkan dialog. Dialog tersebut akan melakukan pemberhentian sementara terhadap aplikasi yang sedang dijalankannya dan pengguna harus memilih pilihan yang berada di dalam dialog tersebut. Cara penggunaan dari Action Sheet adalah sebagai berikut:
+Action Sheet merupakan sebuah komponen yang berguna untuk memunculkan dialog. Dialog tersebut akan melakukan pemberhentian sementara terhadap aplikasi yang sedang dijalankannya dan pengguna harus memilih pilihan yang berada di dalam dialog tersebut. Cara penggunaan dari Action Sheet terdapat pada (Kode \ref{kode:ion-action-sheet}).
 
-\begin{lstlisting}[language=HTML, caption=Contoh kode untuk membuat Action Sheet, label=kode:ion-action-sheet]
+\begin{lstlisting}[language=HTML, caption=Contoh Potongan Kode Action Sheet, label=kode:ion-action-sheet]
 import React from 'react';
 import { IonActionSheet, IonButton } from '@ionic/react';
 
@@ -120,106 +216,61 @@ function Example() {
 export default Example;
 \end{lstlisting}
 
-\subsubsection{Accordion}
-Accordion berfungsi untuk mengurangi ruang vertikal dalam mengorganisir informasi yang ingin ditampilkan. Accordion memiliki 2 komponen yaitu ion-accordion dan ion-accordion-group. Ketika menggunakan accordion, ion-accordion harus berada di dalam ion-accordion-group. Contoh penggunaan dari Accordion adalah sebagai berikut:
+Jika kode tersebut dijalankan, hasil yang ditampilkan dari Action Sheet yaitu (Gambar \ref{fig:action-sheet-example}).
 
-\begin{lstlisting}[language=HTML, caption=Contoh kode untuk membuat Accordion, label=kode:ion-accordion]
-import React from 'react';
-import { IonAccordion, IonAccordionGroup, IonItem, IonLabel } from '@ionic/react';
-function Example() {
-  return (
-    <IonAccordionGroup>
-      <IonAccordion value="first">
-        <IonItem slot="header" color="light">
-          <IonLabel>First Accordion</IonLabel>
-        </IonItem>
-        <div className="ion-padding" slot="content">
-          First Content
-        </div>
-      </IonAccordion>
-      <IonAccordion value="second">
-        <IonItem slot="header" color="light">
-          <IonLabel>Second Accordion</IonLabel>
-        </IonItem>
-        <div className="ion-padding" slot="content">
-          Second Content
-        </div>
-      </IonAccordion>
-      <IonAccordion value="third">
-        <IonItem slot="header" color="light">
-          <IonLabel>Third Accordion</IonLabel>
-        </IonItem>
-        <div className="ion-padding" slot="content">
-          Third Content
-        </div>
-      </IonAccordion>
-    </IonAccordionGroup>
-  );
-}
-export default Example;
-\end{lstlisting}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.25\linewidth}
+        \includegraphics[scale=0.4]{Gambar/ionic-action-sheet-1.png}
+        \subcaption{}
+    \end{minipage}
+    \begin{minipage}{0.25\linewidth}
+        \includegraphics[scale=0.4]{Gambar/ionic-action-sheet-2.png}
+        \subcaption{}
+    \end{minipage}
+    \caption[Gambar Hasil Action Sheet]{(a) Halaman yang hanya berisi tombol `\textit{open}', dan (b) Halaman Action Sheet ketika tombol `\textit{open}' diklik}
+    \label{fig:action-sheet-example}
+\end{figure}
 
-\subsubsection{Alert}
-Alert pada Ionic berfungsi untuk memberikan informasi serta mengumpulkan informasi dari pengguna menggunakan input dari pengguna. Sama seperti Action Sheet, Alert juga biasanya dimunculkan di atas konten dari aplikasi, namun Alert biasanya berada di tengah konten aplikasi, sedangkan Action Sheet muncul berada dari bawah aplikasi. Contoh dari penggunaan Alert adalah sebagai berikut:
+Properti `\textit{role}' pada Action Sheet adalah sebuah properti yang diberikan untuk memberikan \textit{role} `\textit{cancel}' atau `\textit{destructive}' pada tombol yang berada di dalam Action Sheet. Nilai `\textit{cancel}' digunakan untuk tombol yang akan membatalkan aksi yang dilakukan, sedangkan nilai `\textit{destructive}' digunakan untuk tombol yang akan menghapus atau mengubah data yang ada. Selain properti role, Action Sheet memiliki properti seperti pada (Tabel \ref{tab:action-sheet-property}).
 
-\begin{lstlisting}[language=HTML, caption=Contoh kode untuk membuat Alert, label=kode:ion-alert]
-import React from 'react';
-import { IonAlert, IonButton } from '@ionic/react';
-
-function Example() {
-  return (
-    <>
-      <IonButton id="present-alert">Click Me</IonButton>
-      <IonAlert
-        trigger="present-alert"
-        header="A Short Title Is Best"
-        subHeader="A Sub Header Is Optional"
-        message="A message should be a short, complete sentence."
-        buttons={['Action']}
-      ></IonAlert>
-    </>
-  );
-}
-export default Example;
-\end{lstlisting}
-
-\subsubsection{Badge}
-Badge adalah elemen inline yang umumnya muncul di dekat dengan elemen lain. Badge ini umumnya mengandung angka atau karakter lainnya dan dapat digunakan sebagai elemen widget yang menampilkan informasi tambahan tentang elemen induk.Contoh dari penggunaan Badge adalah sebagai berikut:
-
-\begin{lstlisting}[language=HTML, caption=Contoh kode untuk membuat Badge, label=kode:ion-badge]
-<IonBadge>11</IonBadge>
-\end{lstlisting}
-
-\subsubsection{Breadcrumb}
-Breadcrumb pada Ionic 7 adalah sebuah elemen navigasi tunggal yang merupakan anak dari komponen Breadcrumbs. Breadcrumb dapat berupa tautan ke tempat lain dalam aplikasi atau berupa teks biasa. Setiap breadcrumb memiliki pemisah di antara mereka dan dapat opsionalnya berisi ikon. Breadcrumb digunakan untuk menunjukkan posisi pengguna dalam aplikasi atau situs yang besar dan memiliki halaman yang tersusun secara hierarkis. Mereka dapat diklik untuk menampilkan popover dengan informasi lebih lanjut atau memperluas breadcrumb yang terlipat. Breadcrumb dapat dikonfigurasi dengan berbagai cara, seperti menambahkan ikon, mengatur jumlah maksimum item yang ditampilkan, dan mengontrol tampilan item sebelum dan setelah penggulungan. Contoh dari penggunaan Breadcrumb adalah sebagai berikut:
-
-\begin{lstlisting}[language=HTML, caption=Contoh kode untuk membuat Breadcrumb, label=kode:ion-breadcrumb]
-import React from 'react';
-import { IonBreadcrumb, IonBreadcrumbs } from '@ionic/react';
-function Example() {
-  return (
-    <IonBreadcrumbs>
-      <IonBreadcrumb href="#home">Home</IonBreadcrumb>
-      <IonBreadcrumb href="#electronics">Electronics</IonBreadcrumb>
-      <IonBreadcrumb href="#cameras">Cameras</IonBreadcrumb>
-      <IonBreadcrumb href="#film">Film</IonBreadcrumb>
-    </IonBreadcrumbs>
-  );
-}
-export default Example;
-\end{lstlisting}
+\begin{table} [H]
+    \centering
+    \caption{Tabel Properti dari Action Sheet}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+       No. & Nama Properti & Deskripsi & Nilai Properti \\ \hline
+        1 & animated & Memberikan animasi & `true' atau `false'\\
+         &  & pada \textit{action-sheet} & \\ \hline
+        2 & header & Judul untuk action-sheet & String atau undefined \\ \hline
+        3 & backdrop-dissmiss & Menutup \textit{action-sheet} & `true' atau `false' \\
+         &  & apabila backdrop diklik & \\ \hline
+    \end{tabular}
+    \label{tab:action-sheet-property}
+\end{table}
 
 \subsubsection{Button}
-Button merupakan elemen interaktif yang dapat digunakan dalam berbagai aplikasi untuk menyediakan fitur tombol standar. Berikut adalah contoh dari penggunaan Button:
+Button merupakan elemen interaktif yang dapat digunakan dalam berbagai aplikasi untuk menyediakan fitur tombol standar. Cara penggunaan komponen Button terdapat pada (Kode \ref{kode:ion-button}).
 
-\begin{lstlisting}[language=HTML, caption=Contoh kode untuk membuat Button, label=kode:ion-button]
-<IonButton>Default</IonButton>
+\begin{lstlisting}[language=HTML, caption=Contoh Potongan Kode Button, label=kode:ion-button]
+<IonButton>Open</IonButton>
 \end{lstlisting}
 
-\subsubsection{Card}
-Card merupakan komponen UI yang digunakan untuk menampilkan konten seperti teks, gambar, tombol, dan daftar dalam sebuah kotak. Komponen ini biasanya terdiri dari header, judul, gambar, dan konten utama. Card dapat digunakan sebagai komponen tunggal atau digabungkan dengan komponen lain untuk membuat tampilan yang lebih kompleks. Card dapat disesuaikan dengan menggunakan properti CSS seperti background dan color. Berikut merupakan contoh dari penggunaan Card:
+Pada komponen Button terdapat properti `\texttt{expand}' dan `\texttt{icons}'. Secara \textit{default}, komponen Button memiliki \textit{style} \texttt{display: inline-block} dan tidak memiliki ikon. Namun dengan properti \textit{expand}, \textit{style} pada komponen Button dapat diubah dengan cara memberikan properti `\texttt{expand}' pada komponen Button seperti \texttt{<IonButton expand="block">Block</IonButton>}. Properti ikon juga dapat ditambahkan pada awal, akhir, ataupun hanya terdapat ikon pada Button tersebut, seperti pada (Kode \ref{kode:ion-button-icon}). Saat menambahkan Icon, pengembang bisa mengikuti cara yang terdapat pada subbab \ref{subsubsec:icon}.
 
-\begin{lstlisting}[language=HTML, caption=Contoh kode untuk membuat Card, label=kode:ion-card]
+\begin{lstlisting}[language=HTML, caption=Contoh Potongan Kode Button Menggunakan Icon, label=kode:ion-button-icon]
+<IonButton>
+    <IonIcon slot="start" icon={star}></IonIcon>
+    Left Icon
+</IonButton>
+\end{lstlisting}
+
+Nilai dari `slot' dapat berupa `\texttt{start}' untuk menempatkan ikon di awal Button, `\texttt{end}' untuk menempatkan ikon di akhir button, ataupun `\texttt{icon-only}' untuk memberikan ikon saja pada button.
+
+\subsubsection{Card}
+Card merupakan komponen yang digunakan untuk menampilkan konten seperti teks, gambar, tombol, dan daftar dalam sebuah kotak. Komponen ini biasanya terdiri dari \textit{header}, judul, gambar, dan konten utama. Card dapat digunakan sebagai komponen tunggal atau digabungkan dengan komponen lain untuk membuat tampilan yang lebih kompleks. Card dapat disesuaikan dengan menggunakan properti CSS seperti `\texttt{background}' dan `\texttt{color}'. Cara menggunakan Card terdapat pada contoh (Kode \ref{kode:ion-card}).
+
+\begin{lstlisting}[language=HTML, caption=Contoh Potongan Kode Card, label=kode:ion-card]
 import React from 'react';
 import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/react';
 
@@ -238,35 +289,12 @@ function Example() {
 export default Example;
 \end{lstlisting}
 
-\subsubsection{Checkbox}
-Checkbox merupakan komponen yang memungkinkan pengguna untuk memilih beberapa opsi dari satu set dan muncul sebagai dicentang ketika diaktifkan. Komponen ini digunakan dengan tag <ion-checkbox>. Contoh dari penggunaan Checkbox adalah sebagai berikut:
-
-\begin{lstlisting}[language=HTML, caption=Contoh kode untuk membuat Checkbox, label=kode:ion-checkbox]
-<IonCheckbox>I agree to the terms and conditions</IonCheckbox>
-\end{lstlisting}
-
-\subsubsection{Chip}
-Chip pada Ionic 7 adalah elemen yang digunakan untuk menampilkan informasi dalam bentuk container kecil, seperti bubuk. Chip ini dapat berisi berbagai elemen seperti avatar, teks, dan ikon. Contohdari penggunaan Chip adalah sebagai berikut:
-
-\begin{lstlisting}[language=HTML, caption=Contoh kode untuk membuat Button, label=kode:ion-chip]
-import React from 'react';
-import { IonChip } from '@ionic/react';
-function Example() {
-  return (
-    <>
-      <IonChip>Default</IonChip>
-      <IonChip disabled={true}>Disabled</IonChip>
-      <IonChip outline={true}>Outline</IonChip>
-    </>
-  );
-}
-export default Example;
-\end{lstlisting}
+Pengembang juga bisa menggunakan Card sebagai Media Card dengan menambahkan elemen \texttt{<img />} pada Card tersebut ataupun Button Card dengan menambahkan \texttt{<IonButton>} pada Card tersebut.
 
 \subsubsection{Content}
-Content merupakan komponen yang berguna untuk menyediakan area konten yang dapat dikontrol dan diubah menggunakan CSS. Dalam satu tampilan hanya terdapat satu konten. Konten dan komponen Ionic lainnya dapat dikostumisasi ulang dengan menggunakan CSS yang tersedia. Berikut adalah contoh dari penggunaan Content:
+Content merupakan komponen yang berguna untuk menyediakan area konten yang dapat dikontrol dan diubah menggunakan CSS. Dalam satu tampilan hanya terdapat satu konten. Konten dan komponen Ionic lainnya dapat dikostumisasi ulang dengan menggunakan CSS yang tersedia. Cara menggunakan Card terdapat pada contoh (Kode \ref{kode:ion-content}).
 
-\begin{lstlisting}[language=HTML, caption=Contoh kode untuk membuat Content, label=kode:ion-content]
+\begin{lstlisting}[language=HTML, caption=Contoh Potongan Kode Content, label=kode:ion-content]
 import React from 'react';
 import { IonContent } from '@ionic/react';
 
@@ -282,10 +310,128 @@ function Example() {
 export default Example;
 \end{lstlisting}
 
-\subsubsection{Toolbar}
-Toolbar merupakan komponen yang digunakan untuk menampilkan judul, tombol, ikon, tombol kembali, tombol menu, kotak pencarian, segmen, dan indikator progres di aplikasi. Toolbars umumnya ditempatkan di atas atau di bawah konten dan menyediakan konten dan tindakan untuk layar saat ini. Ketika toolbar ditempatkan di header, toolbar akan muncul di bagian atas konten, sedangkan jika ditempatkan di footer, toolbar akan muncul di bagian bawah. Berikut adalah contoh penggunaan Toolbar:
+Pada Content, komponen ini dapat ditambahkan header, footer. Lalu komponen content ini juga dapat berupa Fixed Content dan juga Fullscreen Content. Secara \textit{default}, Content akan memenuhi \textit{header} dan \textit{footer}.
 
-\begin{lstlisting}[language=HTML, caption=Contoh kode untuk membuat Toolbar, label=kode:ion-toolbar]
+\subsubsection{Grid}
+\label{subsubsec:grid}
+Komponen Grid adalah sistem \textit{layout} yang menggunakan \textit{flexbox} untuk membangun \textit{layout} yang fleksibel dan responsif. Sistem Grid ini berguna untuk mengatur ruang antara elemen pada sebuah kontainer secara dinamis berdasarkan ukuran layar dan \textit{device} yang berbeda. Pengguna dapat mengatur sendiri nilai Grid yang diinginkan. Nilai dari Grid tersebut adalah rentang angka dari 1 hingga 12. 
+
+\subsubsection{Icon}
+\label{subsubsec:icon}
+Komponen Icon adalah elemen dasar yang tersedia melalui \textit{library} Ionicons. Secara \textit{default}, Icon dipersiapkan dengan semua aplikasi Ionic Framework. Komponen ini dapat digunakan untuk menampilkan ikon dari set Ionicons atau ikon yang berupa SVG. Selain itu, komponen ini juga mendukung pengaturan seperti ukuran dan warna. Cara penggunaan Icon terdapat pada (Kode \ref{kode:ion-icon}).
+
+\begin{lstlisting}[language=HTML, caption=Contoh Kode Penggunaan Icon, label=kode:ion-icon]
+import React from 'react';
+import { IonIcon } from '@ionic/react';
+import { logoIonic } from 'ionicons/icons';
+
+function Example() {
+  return (
+    <>
+      <IonIcon icon={logoIonic}></IonIcon>
+      <IonIcon icon={logoIonic} size="large"></IonIcon>
+      <IonIcon icon={logoIonic} color="primary"></IonIcon>
+      <IonIcon icon={logoIonic} size="large" color="primary"></IonIcon>
+    </>
+  );
+}
+export default Example;
+\end{lstlisting}
+
+Untuk Icon yang diinginkan, pengembang bisa menggunakan Icon dari Ionic yang bisa didapatkan di \url{ionic.io/ionicons} ataupun bisa menambahkannya sendiri dengan cara melakukan \textit{import} pada Icon yang dimiliki.
+
+% \subsubsection{Item}
+
+\subsubsection{List}
+List digunakan untuk menampilkan data dalam bentuk baris, seperti daftar kontak, daftar putar, atau menu. Komponen ini mendukung berbagai macam interaksi, termasuk menggeser \textit{item} untuk menampilkan opsi, menarik untuk menyusun ulang \textit{item} dalam daftar, dan menghapus \textit{item}. Komponen ini dapat ditambah berbagai elemen ke dalam daftar, seperti teks, tombol, ikon, dan gambar dengan ukuran yang kecil. Cara penggunaan List terdapat pada (Kode \ref{kode:ion-list}).
+
+\begin{lstlisting}[language=HTML, caption=Contoh Kode Penggunaan List, label=kode:ion-list]
+import React from 'react';
+import { IonItem, IonLabel, IonList } from '@ionic/react';
+
+function Example() {
+  return (
+    <IonList>
+      <IonItem>
+        <IonLabel>Pokemon Yellow</IonLabel>
+      </IonItem>
+      <IonItem>
+        <IonLabel>Mega Man X</IonLabel>
+      </IonItem>
+      <IonItem>
+        <IonLabel>The Legend of Zelda</IonLabel>
+      </IonItem>
+      <IonItem>
+        <IonLabel>Pac-Man</IonLabel>
+      </IonItem>
+      <IonItem>
+        <IonLabel>Super Mario World</IonLabel>
+      </IonItem>
+    </IonList>
+  );
+}
+export default Example;
+\end{lstlisting}
+
+Komponen ini dapat ditambahkan properti `inset' untuk memberikan \textit{margin} pada tiap tepi, `lines' untuk memberikan \textit{border} bawah, dan juga `mode' untuk menentukan \textit{style} platform apa yang diinginkan. Secara \textit{default}, properti `inset' memiliki nilai `false', properti `lines' memiliki nilai `undefined', dan juga properti `mode' memiliki nilai `undefined'. Pengembang dapat mengubah nilai dari properti tersebut dengan nilai yang berada pada (Tabel \ref{tab:list-property})
+
+\begin{table} [H]
+    \centering
+    \caption{Tabel Properti dari List}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+       No. & Nama Properti & Atribut & Nilai Properti \\ \hline
+        1 & inset & inset & `true' atau `false'\\ \hline
+        2 & lines & lines & `full' atau `inset' atau `none'\\ \hline
+        3 & mode & mode & `ios' atau `md' \\ \hline
+    \end{tabular}
+    \label{tab:list-property}
+\end{table}
+
+\subsubsection{Menu}
+Menu merupakan \textit{navigation drawer} yang meluncur dari sisi tampilan saat dijalankan. Komponen ini adalah pola navigasi umum yang dapat secara permanen ditampilkan di layar saat diperlukan. Komponen Menu dapat digunakan untuk membuat tata letak aplikasi yang lebih terstruktur dan meningkatkan pengalaman pengguna dengan menyediakan akses mudah ke berbagai bagian dari aplikasi. Cara penggunaan Menu terdapat pada (Kode \ref{kode:ion-menu}).
+
+\begin{lstlisting}[language=HTML, caption=Contoh Kode Penggunaan Menu, label=kode:ion-menu]
+import React from 'react';
+import { IonButtons, IonContent, IonHeader, IonMenu, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+function Example() {
+  return (
+    <>
+      <IonMenu contentId="main-content">
+        <IonHeader>
+          <IonToolbar>
+            <IonTitle>Menu Content</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <IonContent className="ion-padding">This is the menu content.</IonContent>
+      </IonMenu>
+      <IonPage id="main-content">
+        <IonHeader>
+          <IonToolbar>
+            <IonButtons slot="start">
+              <IonMenuButton></IonMenuButton>
+            </IonButtons>
+            <IonTitle>Menu</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <IonContent className="ion-padding">Tap the button in the toolbar to open the menu.</IonContent>
+      </IonPage>
+    </>
+  );
+}
+export default Example;
+\end{lstlisting}
+
+Pada kode tersebut, halaman akan membuka \textit{side menu} ketika dipanggil. Tombol menu akan berada di kiri dikarenakan pada komponen \texttt{IonButtons}, tombol \texttt{IonMenuButtons} memiliki properti `slot' yang bernilai `start'. Secara \textit{default}, letak komponen \textit{side menu} terletak di kiri halaman. Letak dari \textit{side menu} dapat diubah dengan cara memberikan properti `side' dengan nilai `end' pada komponen \texttt{IonMenu}.
+
+\subsubsection{Router}
+\label{subbab:router}
+Router digunakan untuk menangani \textit{routing} di dalam sebuah proyek JavaScript Vanilla dan Stencil. Komponen ini mengontrol semua interaksi dengan riwayat browser dan menggabungkan pembaruan melalui \texttt{ion-router-outlet}. Ion-router menggunakan sintaksis deklaratif menggunakan JSX/HTML untuk mendefinisikan pohon rute. Selain itu, \texttt{ion-router} juga memiliki lifecycle hooks dan properti untuk mengatur perilaku animasi transisi komponen. Router tidak akan pernah menyentuh DOM. Untuk menggunakan Router, pengembang dapat menggunakan \texttt{<Route> </Route>}
+
+\subsubsection{Toolbar}
+Toolbar merupakan komponen yang digunakan untuk menampilkan judul, tombol, ikon, tombol kembali, tombol menu, kotak pencarian, segmen, dan indikator proses di aplikasi. Toolbars umumnya ditempatkan di atas atau di bawah konten dan menyediakan konten dan tindakan untuk layar saat ini. Ketika toolbar ditempatkan di \textit{header}, Toolbar akan muncul di bagian atas konten, sedangkan jika ditempatkan di \textit{footer}, Toolbar akan muncul di bagian bawah. Cara menggunakan Toolbar terdapat pada (Kode \ref{kode:ion-toolbar}).
+
+\begin{lstlisting}[language=HTML, caption=Contoh Kode Penggunaan Toolbar, label=kode:ion-toolbar]
 import React from 'react';
 import { IonFooter, IonHeader, IonTitle, IonToolbar } from '@ionic/react';
 
@@ -309,69 +455,19 @@ function Example() {
 export default Example;
 \end{lstlisting}
 
+Pada kode tersebut, Header Toolbar akan diletakan pada bagian \textit{header} dan Footer Toolbar akan diletakan pada bagian \textit{footer}. 
+
 \subsection{Capacitor Native}
-Native merupakan kemampuan untuk menambahkan fungsionalitas perangkat asli ke dalam aplikasi menggunakan plugin API untuk Swift pada iOS, Java pada Android, dan JavaScript untuk web. Dengan menggunakan plugin ini, pengembang dapat membuat pengalaman "native" yang disesuaikan dengan mudah. Ionic menyediakan Capacitoe sebagai sebuah runtime native yang memungkinkan menambahkan fungsionalitas perangkat asli ke dalam aplikasi.
-
-Pengembang yang menggunakan Capacitor harus menginstal capacitor tersebut terlebih dahulu dengan cara:
-\begin{lstlisting}[language=HTML, caption=Kode untuk menginstal Capacitor Camera, label=kode:install-capacitor]
-$ npm install @capacitor/camera
-\end{lstlisting}
-
-Berikut cara menggunakan Capacitor dengan menggunakan plugin Camera:
-
-\begin{lstlisting}[language=HTML, caption=Contoh kode Capacitor, label=kode:capacitor-camera-example]
-import { Camera, CameraResultType } from '@capacitor/camera';
-
-const takePicture = async () => {
-  const image = await Camera.getPhoto({
-    quality: 90,
-    allowEditing: true,
-    resultType: CameraResultType.Uri
-  });
-  const imageUrl = image.webPath;
-  imageElement.src = imageUrl;
-};
-\end{lstlisting}
-
-\subsubsection{Action Sheet}
-
-Action Sheet merupakan sebuah dialog yang menampilkan serangkaian opsi di atas konten aplikasi dan harus ditutup secara manual oleh pengguna sebelum mereka dapat melanjutkan interaksi dengan aplikasi. Opsi yang merusak dibuat jelas dalam mode ios. Ada beberapa cara untuk menutup action-sheet, termasuk mengetuk latar belakang atau menekan tombol escape di desktop. Action-sheet dapat dikendalikan menggunakan properti isOpen untuk mengontrol status presentasi dari Action Sheet dari state aplikasi. Action-sheet juga memiliki properti seperti header untuk judul, buttons untuk menambahkan tombol, dan keyboardClose untuk menutup action-sheet ketika tombol keyboard tertentu ditekan. Berikut cara menginstall Action Sheet:
-
-\begin{lstlisting}[language=HTML, caption=Kode untuk menginstal Plugin Action Sheet, label=kode:install-action-sheet-capacitor]
-npm install @capacitor/action-sheet
-\end{lstlisting}
-
-Berikut merupakan contoh dari penggunaan Action Sheet:
-
-\begin{lstlisting}[language=HTML, caption=Contoh kode plugin Action Sheet, label=kode:capacitor-action-sheet-example]
-import { ActionSheet, ActionSheetButtonStyle } from '@capacitor/action-sheet';
-
-const showActions = async () => {
-  const result = await ActionSheet.showActions({
-    title: 'Photo Options',
-    message: 'Select an option to perform',
-    options: [
-      {
-        title: 'Upload',
-      },
-      {
-        title: 'Share',
-      },
-      {
-        title: 'Remove',
-        style: ActionSheetButtonStyle.Destructive,
-      },
-    ],
-  });
-
-  console.log('Action Sheet result:', result);
-};
-\end{lstlisting}
+Native merupakan kemampuan untuk menambahkan fungsionalitas perangkat asli ke dalam aplikasi menggunakan \textit{plugin} API untuk Swift pada iOS, Java pada Android, dan JavaScript untuk web. Dengan menggunakan \textit{plugin} ini, pengembang dapat membuat pengalaman ``\textit{native}'' yang disesuaikan dengan mudah. Ionic menyediakan Capacitor sebagai sebuah \textit{runtime native} yang memungkinkan menambahkan fungsionalitas perangkat asli ke dalam aplikasi.
 
 \subsubsection{Camera}
-Plugin Camera pada Ionic 7 adalah sebuah plugin yang memungkinkan pengguna untuk mengambil foto dengan kamera atau memilih foto yang sudah ada dari album foto. Plugin ini dapat diinstal dengan perintah npm install @capacitor/camera dan npx cap sync untuk platform iOS, serta menambahkan beberapa izin pada file Info.plist untuk iOS dan AndroidManifest.xml untuk Android. Selain itu, plugin ini juga memerlukan PWA Elements agar dapat berfungsi. Berikut merupakan contoh kode dari penggunaan Camera Plugin:
+Plugin Camera pada Ionic 7 adalah sebuah plugin yang memungkinkan pengguna untuk mengambil foto dengan kamera atau memilih foto yang sudah ada dari album foto. Plugin ini dapat di-\textit{install} dengan perintah \texttt{npm install @capacitor/camera}  dan \texttt{npx cap sync}, serta menambahkan beberapa izin pada file `Info.plist' untuk iOS dan `AndroidManifest.xml' untuk Android. Selain itu, \textit{plugin} ini juga memerlukan PWA Elements agar dapat berfungsi. Cara untuk meng-\textit{install} Camera terdapat pada (Kode \ref{kode:install-camera-capacitor}), sedangkan cara untuk menggunakan Camera terdapat pada contoh (Kode \ref{kode:capacitor-cam-example}).
 
-\begin{lstlisting}[language=HTML, caption=Contoh kode Capacitor Camera, label=kode:capacitor-cam-example]
+\begin{lstlisting}[language=HTML, caption=Kode untuk Menginstal Plugin Camera, label=kode:install-camera-capacitor]
+npm install @capacitor/camera
+\end{lstlisting}
+
+\begin{lstlisting}[language=HTML, caption=Contoh Kode Capacitor Camera, label=kode:capacitor-cam-example]
 import { Camera, CameraResultType } from '@capacitor/camera';
 
 const takePicture = async () => {
@@ -392,17 +488,16 @@ const takePicture = async () => {
 };
 \end{lstlisting}
 
-\subsubsection{Filesyatem}
-Filesystem API menyediakan alat NodeJS-like untuk bekerja dengan file pada perangkat. Pengembang dapat menggunakan plugin ini untuk melakukan operasi file umum seperti membaca, tulis, dan mengelola isi direktori.
+Pada kode tersebut, \textit{variable} `image' akan menggunakan metode \texttt{getPhoto()} di mana metode ini berfungsi untuk mengambil sebuah gambar dari album atau menangkap gambar menggunakan kamera. Properti \texttt{quality} merupakan kualitas dari gambar yang akan dikembalikan dengan nilai berikisar dari 0 hingga 100 dalam bentuk JPEG. Properti \texttt{allowEditing} berfungsi apabila pengguna ingin melakukan \textit{crop images} pada gambar. Properti \texttt{resultType} berfungsi untuk mengembalikan data dalam bentuk Base64, DataUrl, dan Uri.
 
-Berikut kode untuk menginstall Filesystem:
+\subsubsection{Filesystem}
+Filesystem API menyediakan alat seperti NodeJS untuk bekerja dengan \textit{file} pada perangkat. Pengembang dapat menggunakan \textit{plugin} ini untuk melakukan operasi \textit{file} umum seperti membaca, tulis, dan mengelola isi direktori. Cara untuk meng-\textit{install} Filesystem terdapat pada (Kode \ref{kode:install-filesystem-capacitor}), sedangkan cara untuk menggunakan Filesystem terdapat pada contoh (Kode \ref{kode:example-of-filesystem-capacitor}).
 
-\begin{lstlisting}[language=HTML, caption=Kode untuk menginstal plugin Filesystem, label=kode:install-filesystem-capacitor]
+\begin{lstlisting}[language=HTML, caption=Kode untuk Menginstal Plugin Filesystem, label=kode:install-filesystem-capacitor]
 npm install @capacitor/action-sheet
 \end{lstlisting}
 
-Berikut contoh penggunaan Filesystem Plugin:
-\begin{lstlisting}[language=HTML, caption=Contoh kode dari penggunaan Filesystem, label=kode:example-of-filesystem-capacitor]
+\begin{lstlisting}[language=HTML, caption=Contoh Kode Penggunaan Filesystem, label=kode:example-of-filesystem-capacitor]
 import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
 
 const writeSecretFile = async () => {
@@ -444,22 +539,13 @@ const readFilePath = async () => {
 \end{lstlisting}
 
 \subsubsection{Preference}
-Plugin Preference pada Ionic 7 adalah alat yang memungkinkan Anda untuk menyimpan data sederhana dalam bentuk kunci/nilai yang dapat diakses secara bersamaan. Preferences API menyediakan area penyimpanan data yang mendukung kunci/nilai untuk aplikasi Ionic. Beberapa fitur utama dari Plugin Preference meliputi:
-\begin{itemize}
-    \item Mengatur grup preferences: Preferences grups digunakan untuk mengatur kunci/nilai pairs. Menggunakan nilai 'NativeStorage' memberikan kompatibilitas belakang dengan cordova-plugin-nativestorage.
-    \item Mengakses hasil preferences: Menggunakan getResult() method sehingga mendapatkan nilai dari preferences yang terkait dengan kunci tertentu
-    \item Menyimpan dan mengatur preferences: Menggunakan metode set() untuk menyimpan atau mengatur nilai preferences
-\end{itemize}
+Plugin Preference adalah \textit{plugin} yang berguna untuk menyimpan data sederhana dalam bentuk kunci atau nilai yang dapat diakses secara bersamaan. Preferences API menyediakan area penyimpanan data yang mendukung kunci atau nilai untuk aplikasi Ionic. Untuk menggunakan Plugin Preference dalam aplikasi Ionic, perlu meng-\textit{install plugin} Capacitor Preferences dengan cara yang terdapat pada (Kode \ref{kode:install-preference-capacitor}), sedangkan cara untuk menggunakan Capacitor terdapat pada (Kode \ref{kode:preference-capacitor-example}).
 
-Untuk menggunakan Plugin Preference dalam aplikasi Ionic, perlu menginstal plugin Capacitor Preferences dengan cara:
-
-\begin{lstlisting}[language=HTML, caption=Kode untuk menginstal plugin Preference, label=kode:install-preference-capacitor]
+\begin{lstlisting}[language=HTML, caption=Kode untuk Menginstal Plugin Preference, label=kode:install-preference-capacitor]
 npm install @capacitor/preferences
 \end{lstlisting}
 
-Berikut merupakan contoh kode dari penggunaan Preference:
-
-\begin{lstlisting}[language=HTML, caption=Contoh kode dari plugin Preference, label=kode:preference-capacitor-example]
+\begin{lstlisting}[language=HTML, caption=Contoh Kode Plugin Preference, label=kode:preference-capacitor-example]
 import { Preferences } from '@capacitor/preferences';
 
 const setName = async () => {
@@ -546,7 +632,25 @@ const removeName = async () => {
 % 	\end{minipage}
 % \end{table}
 
- 
+\section{RSS}
+RSS merupakan singkatan dari Really Simple Syndication adalah format sindikasi konten web yang merupakan dialek dari XML. Semua file RSS harus disesuaikan dengan spesifikasi XML 1.0 yang dipublikasikan oleh World Wide Web Consortium (W3C). Dokumen RSS terdiri dari elemen \texttt{<rss>} yang memiliki atribut wajib bernama version untuk menentukan versi RSS yang digunakan. Di bawah elemen \texttt{<rss>} terdapat elemen \texttt{<channel>} yang berisi informasi tentang saluran (metadata) dan isinya seperti pada (Tabel \ref{tab:elemen-rss}).
+\begin{table} [H]
+    \centering
+    \caption{Tabel Elemen RSS}
+    \begin{tabular}{|c|c|c|}
+    \hline
+       Element & Deskripsi & Contoh  \\ \hline
+        title &  Nama dari \texttt{<channel>} & GoUpstate.com News Headlines \\ \hline
+        link & URL dari web HTML yang & http://www.goupstate.com/ \\
+        & berhubungan dengan \texttt{<channel>} tersebut & \\ \hline
+        description & Frasa atau kalimat & The latest news from  \\ 
+        & yang menjelaskan \texttt{<channel>} & GoUpstate.com, a Spartanburg \\ 
+        & &  Herald-Journal Web site.\\ \hline
+    \end{tabular}
+    \label{tab:elemen-rss}
+\end{table}
+
+
 % \subsection{Kutipan}
 % \label{subs:kutipan} 
 % Berikut contoh kutipan dari berbagai sumber, untuk keterangan lebih lengkap, silahkan membaca file referensi.bib yang disediakan juga di template ini.
