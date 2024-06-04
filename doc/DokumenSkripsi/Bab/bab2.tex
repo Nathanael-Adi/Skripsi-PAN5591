@@ -14,7 +14,7 @@
     %     \label{fig:halaman-rugby-indonesia}
     % \end{figure}
 
-    Fitur-fitur yang ada pada aplikasi Rugby Indonesia saat ini yaitu:
+    Fitur-fitur yang ada pada aplikasi Rugby Indonesia dengan versi terakhir yang ada saat ini yaitu:
 
     \begin{enumerate}
         \item Halaman \textit{Latest News} yang diambil dari \url{https://rugbyindonesia.or.id/berita/} dengan memanfaatkan protokol RSS. 
@@ -128,7 +128,7 @@ function Post() {
 Pada kode tersebut, Fragment akan mengelompokan dua elemen secara bersamaan menjadi satu grup dan akan mengembalikan grup yang berisi `\texttt{<PostTitle>}' dan `\texttt{<PostBody>}'.
 
 \subsubsection{Profiler}
-Profiler adalah komponen yang digunakan untuk mengukur seberapa sering sebuah aplikasi React melakukan rendering dan seberapa besar biaya yang dikeluarkan untuk melakukan \textit{rendering} tersebut. Cara penggunaan komponen Profiler terdapat pada contoh (Kode \ref{kode:profiler-example}).
+Profiler adalah komponen yang digunakan untuk mengukur seberapa sering sebuah aplikasi React melakukan \textit{rendering} dan seberapa besar biaya yang dikeluarkan untuk melakukan \textit{rendering} tersebut. Cara penggunaan komponen Profiler terdapat pada contoh (Kode \ref{kode:profiler-example}).
 
 \begin{lstlisting}[language=HTML, caption=Contoh Potongan Kode Profiler, label=kode:profiler-example]
 <Profiler id="App" onRender={onRender}>
@@ -158,6 +158,14 @@ root.render(
     <App />
   </StrictMode>
 );
+\end{lstlisting}
+
+\subsection{Dangerously setting the inner HTML}
+dangerouslySetInnerHTML merupakan sebuah objek dengan bentuk \texttt{\{\_\_html:'<p>some html<\/p>'\}} yang berisi string HTML mentah di dalamnya. Hal ini akan menimpa properti innerHTML dari node DOM dan menampilkan HTML yang diberikan di dalamnya. Contoh kode penggunaan dangerouslySetInnerHTML terdapat pada Kode \ref{kode:danger-set-inner-html-example}. Pada kode tersebut, pengembang harus memastikan bahwa kode HTML tersebut aman atau berasal dari sumber yang terpercaya. 
+
+\begin{lstlisting}[language=HTML, caption=Contoh Potongan Kode dangerouslySetInnerHTML, label=kode:danger-set-inner-html-example]
+const markup = { __html: '<p>some raw html</p>' };
+return <div dangerouslySetInnerHTML={markup} />;
 \end{lstlisting}
 
 \section{\texorpdfstring{Ionic 7 Framework~\cite{ionic-docs}}{Ionic 7 Framework}}
@@ -424,9 +432,97 @@ export default Example;
 
 Pada kode tersebut, halaman akan membuka \textit{side menu} ketika dipanggil. Tombol menu akan berada di kiri dikarenakan pada komponen \texttt{IonButtons}, tombol \texttt{IonMenuButtons} memiliki properti `slot' yang bernilai `start'. Secara \textit{default}, letak komponen \textit{side menu} terletak di kiri halaman. Letak dari \textit{side menu} dapat diubah dengan cara memberikan properti `side' dengan nilai `end' pada komponen \texttt{IonMenu}.
 
+\subsubsection{Modal}
+Modal dapat digunakan langsung ke dalam template. Ini mengurangi jumlah handler yang perlu dihubungkan untuk menampilkan modal.
+
+Saat menggunakan Modal dengan Angular, React, atau Vue, komponen yang diberikan akan dihancurkan ketika modal ditutup. Fungsi ini disediakan oleh kerangka kerja JavaScript. Jika menggunakan modal tanpa kerangka kerja JavaScript, komponen yang diberikan tidak akan dihancurkan. Jika fungsi ini diperlukan, disarankan menggunakan modalController.
+
+Contoh penggunaan Modal terdapat pada Kode \ref{kode:ion-modal}. Pada kode tersebut, Modal menggunakan properti isOpen. isOpen menggunakan binding data satu arah, yang berarti isOpen tidak akan otomatis disetel ke false saat modal ditutup. Pengembang harus mendengarkan event ionModalDidDismiss atau didDismiss dan mengatur isOpen ke false. Ini untuk mencegah bagian internal ion-modal terlalu terkait dengan status aplikasi. Dengan binding data satu arah, modal hanya perlu memperhatikan nilai boolean yang diberikan oleh variabel reaktif. Dengan binding data dua arah, modal perlu memperhatikan nilai boolean serta keberadaan variabel reaktif itu sendiri, yang dapat menyebabkan perilaku non-deterministik dan membuat aplikasi lebih sulit untuk di-debug.
+\begin{lstlisting}[language=HTML, caption=Contoh Kode Penggunaan Modal, label=kode:ion-modal]
+import React, { useState } from 'react';
+import { IonButtons, IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonPage } from '@ionic/react';
+
+function Example() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Inline Modal</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent className="ion-padding">
+        <IonButton expand="block" onClick={() => setIsOpen(true)}>
+          Open
+        </IonButton>
+        <IonModal isOpen={isOpen}>
+          <IonHeader>
+            <IonToolbar>
+              <IonTitle>Modal</IonTitle>
+              <IonButtons slot="end">
+                <IonButton onClick={() => setIsOpen(false)}>Close</IonButton>
+              </IonButtons>
+            </IonToolbar>
+          </IonHeader>
+          <IonContent className="ion-padding">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni illum quidem recusandae ducimus quos
+              reprehenderit. Veniam, molestias quos, dolorum consequuntur nisi deserunt omnis id illo sit cum qui.
+              Eaque, dicta.
+            </p>
+          </IonContent>
+        </IonModal>
+      </IonContent>
+    </IonPage>
+  );
+}
+
+export default Example;
+\end{lstlisting}
+
+Metode yang terdapat pada Modal yaitu:
+\begin{itemize}
+    \item dismiss
+    \begin{itemize}
+        \item Deskripsi: Menutup modal setelah ditampilkan.
+        \item Signature: dismiss(data?: any, role?: string) => Promise<boolean>
+    \end{itemize}
+
+    \item getCurrentBreakpoint
+    \begin{itemize}
+        \item Deskripsi: Mengembalikan breakpoint saat ini dari modal gaya lembar.
+        \item Signature: getCurrentBreakpoint() => Promise<number | undefined>
+    \end{itemize}
+
+    \item onDidDismiss
+    \begin{itemize}
+        \item Deskripsi: Mengembalikan promise yang diselesaikan saat modal telah ditutup.
+        \item Signature: onDidDismiss<T = any>() => Promise<OverlayEventDetail<T>>
+    \end{itemize}
+
+    \item onWillDismiss
+    \begin{itemize}
+        \item Deskripsi: Mengembalikan promise yang diselesaikan saat modal akan ditutup.
+        \item Signature: onWillDismiss<T = any>() => Promise<OverlayEventDetail<T>>
+    \end{itemize}
+
+    \item present
+    \begin{itemize}
+        \item Deskripsi: Menampilkan modal setelah dibuat.
+        \item Signature: present() => Promise<void>
+    \end{itemize}
+
+    \item setCurrentBreakpoint
+    \begin{itemize}
+        \item Deskripsi: Memindahkan modal gaya lembar ke breakpoint tertentu. Nilai breakpoint harus sesuai dengan yang didefinisikan dalam array breakpoints.
+        \item Signature: setCurrentBreakpoint(breakpoint: number) => Promise<void>
+    \end{itemize}
+\end{itemize}
+
 \subsubsection{Router}
 \label{subbab:router}
-Router digunakan untuk menangani \textit{routing} di dalam sebuah proyek JavaScript Vanilla dan Stencil. Komponen ini mengontrol semua interaksi dengan riwayat browser dan menggabungkan pembaruan melalui \texttt{ion-router-outlet}. Ion-router menggunakan sintaksis deklaratif menggunakan JSX/HTML untuk mendefinisikan pohon rute. Selain itu, \texttt{ion-router} juga memiliki lifecycle hooks dan properti untuk mengatur perilaku animasi transisi komponen. Router tidak akan pernah menyentuh DOM. Untuk menggunakan Router, pengembang dapat menggunakan \texttt{<Route> </Route>}
+Router digunakan untuk menangani \textit{routing} di dalam sebuah proyek JavaScript Vanilla dan Stencil. Komponen ini mengontrol semua interaksi dengan riwayat browser dan menggabungkan pembaruan melalui \texttt{ion-router-outlet}. Ion-router menggunakan sintaksis deklaratif menggunakan JSX/HTML untuk mendefinisikan pohon rute. Selain itu, \texttt{ion-router} juga memiliki lifecycle hooks dan properti untuk mengatur perilaku animasi transisi komponen. Router tidak akan pernah menyentuh DOM. Untuk menggunakan Router, pengembang dapat menggunakan \texttt{<Route>}.
 
 \subsubsection{Toolbar}
 Toolbar merupakan komponen yang digunakan untuk menampilkan judul, tombol, ikon, tombol kembali, tombol menu, kotak pencarian, segmen, dan indikator proses di aplikasi. Toolbars umumnya ditempatkan di atas atau di bawah konten dan menyediakan konten dan tindakan untuk layar saat ini. Ketika toolbar ditempatkan di \textit{header}, Toolbar akan muncul di bagian atas konten, sedangkan jika ditempatkan di \textit{footer}, Toolbar akan muncul di bagian bawah. Cara menggunakan Toolbar terdapat pada (Kode \ref{kode:ion-toolbar}).
@@ -632,7 +728,7 @@ const removeName = async () => {
 % 	\end{minipage}
 % \end{table}
 
-\section{RSS}
+\section{\texorpdfstring{RSS~\cite{rss-docs}}{RSS}}
 RSS merupakan singkatan dari Really Simple Syndication adalah format sindikasi konten web yang merupakan dialek dari XML. Semua file RSS harus disesuaikan dengan spesifikasi XML 1.0 yang dipublikasikan oleh World Wide Web Consortium (W3C). Dokumen RSS terdiri dari elemen \texttt{<rss>} yang memiliki atribut wajib bernama version untuk menentukan versi RSS yang digunakan. Di bawah elemen \texttt{<rss>} terdapat elemen \texttt{<channel>} yang berisi informasi tentang saluran (metadata) dan isinya seperti pada (Tabel \ref{tab:elemen-rss}).
 \begin{table} [H]
     \centering
@@ -650,6 +746,75 @@ RSS merupakan singkatan dari Really Simple Syndication adalah format sindikasi k
     \label{tab:elemen-rss}
 \end{table}
 
+\section{\texorpdfstring{React-Axios~\cite{axios-docs}}{React-Axios}}
+Package React-Axios merupakan komponen React yang menggunakan Axios untuk melakukan permintaan asinkron di dalam render. Fitur dari React-Axios yaitu:
+
+\begin{itemize}
+    \item Mewarisi semua fitur utama dari Axios.
+    \item Berbasis komponen React.
+    \item Menggunakan callback fungsi anak untuk menangani hasil permintaan (error, response, isLoading, makeRequest, axios).
+    \item Membatalkan permintaan sebelumnya secara otomatis.
+    \item Debounce untuk mencegah permintaan berulang dengan cepat.
+    \item Permintaan hanya dipicu saat ada perubahan properti dan dalam keadaan siap (isReady).
+    \item Mendukung callback untuk sukses (onSuccess), kesalahan (onError), dan loading (onLoading).
+    \item Mendukung instance Axios kustom melalui properti atau <AxiosProvider>.
+\end{itemize}
+
+Cara untuk melakukan install package React-Axios terdapat pada Kode \ref{kode:install-react-axios}.
+\begin{lstlisting}[language=Awk, caption=Kode untuk Menginstall Komponen React-Axios, label=kode:install-react-axios]
+npm install react-axios
+\end{lstlisting}
+
+Komponen yang dimiliki oleh React-Axios meliputi komponen dasar dan juga komponen pembantu.
+
+\begin{itemize}
+    \item Komponen dasar: <Request> merupakan komponen dasar untuk melakukan permintaan HTTP dengan berbagai properti (instance, method, url, data, params, config, debounce, debounceImmediate, isReady, onSuccess, onLoading, onError).
+    
+    \item Komponen bantu: Komponen bantu yang terdapat pada React-Axios yaitu <Get>, <Delete>, <Head>, <Post>, <Put>, <Patch>. Komponen ini berfungsi untuk permintaan HTTP yang spesifik.
+\end{itemize}
+
+Contoh penggunaan React-Axios terdapat pada (Kode)
+
+\begin{lstlisting}[language=HTML, caption=Contoh Kode dalam Melakukan GET Menggunakan React-Axios, label=kode:get-example-react-axios]
+// Post a request for a user with a given ID
+render() {
+  return (
+    <div>
+      <Get url="/api/user" params={{id: "12345"}}>
+        {(error, response, isLoading, makeRequest, axios) => {
+          if(error) {
+            return (<div>Something bad happened: {error.message} <button onClick={() => makeRequest({ params: { reload: true } })}>Retry</button></div>)
+          }
+          else if(isLoading) {
+            return (<div>Loading...</div>)
+          }
+          else if(response !== null) {
+            return (<div>{response.data.message} <button onClick={() => makeRequest({ params: { refresh: true } })}>Refresh</button></div>)
+          }
+          return (<div>Default message before request is made.</div>)
+        }}
+      </Get>
+    </div>
+  )
+}
+\end{lstlisting}
+
+\section{\texorpdfstring{React Native XML to JSON Conversion~\cite{xml2js-docs}}{React Native XML to JSON Conversion}}
+Package React Native XML to JSON Conversion merupakan konverter sederhana dari XML ke objek JavaScript dan mendukung konversi dua arah menggunakan sax-js dan xmlbuilder-js. Package ini diciptakan dari hasil fork pada node-xml2js yang mendukung React Native sehingga mendukung platform Android dan juga iOS. 
+
+Cara untuk melakukan install package React-Native-XML2JS terdapat pada Kode \ref{kode:install-react-xml2js}.
+\begin{lstlisting}[language=Awk, caption=Kode untuk Menginstal Komponen React-Axios, label=kode:install-react-xml2js]
+npm install react-native-xml2js
+\end{lstlisting}
+
+Terdapat juga contoh penggunaan XML2JS terdapat pada Kode \ref{kode:react-xml2js-example}.
+\begin{lstlisting}[language=HTML, caption=Kode Contoh Penggunaan XML2JS, label=kode:react-xml2js-example]
+var parseString = require('react-native-xml2js').parseString;
+var xml = "<root>Hello xml2js!</root>"
+parseString(xml, function (err, result) {
+    console.dir(result);
+});
+\end{lstlisting}
 
 % \subsection{Kutipan}
 % \label{subs:kutipan} 

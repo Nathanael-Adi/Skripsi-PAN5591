@@ -1,0 +1,148 @@
+\chapter{Perancangan}
+\label{chap:perancangan}
+
+\section{Perancangan Kelas}
+Perancangan kelas diagram dilakukan setelah tahap analisis sistem kini, analisis masalah, dan analisis sistem usulan yang dilakukan pada Bab \ref{chap:analisis}. Dari analisis yang telah dilakukan, dihasilkan sebuah diagram kelas dengan penyesuaian yang sudah dilakukan dan terdapat pada Gambar \ref{fig:rugby-indonesia-class-diagram}.
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[scale=0.75]{Gambar/Rugby Indonesia UML Class Diagram Rev V1.png}
+    \caption{Diagram Kelas Rugby Indonesia}
+    \label{fig:rugby-indonesia-class-diagram}
+\end{figure}
+
+Deskripsi perancangan dari tiap kelas adalah sebagai berikut:
+\begin{enumerate}
+    \item Kelas Main
+    
+    Kelas Main hanya bertugas untuk melakukan render terhadap kelas App. Pada kelas ini, terdapat dua buah atribut yaitu container dan root. Selain itu, pada kelas ini juga terdapat method render yang bertujuan untuk melakukan render terhadap App. Penjelasan terkait atribut dan juga method yang terdapat pada kelas ini adalah sebagai berikut:
+    \begin{itemize}
+        \item Atribut container: mengambil dokumen yang memiliki element root
+        \item Atribut root: membuat root dengan menggunakan createRoot yang berasal dari library React.
+        \item Method render: melakukan render pada aplikasi React.
+    \end{itemize}
+
+    \item Kelas App
+
+    Kelas App bertugas untuk melakukan render terhadap kelas Menu yang akan digunakan pada aplikasi ini. Pada kelas ini, terdapat dua buah atribut yaitu Menu dan Route. Selain itu, pada kelas ini juga terdapat method setupIonicReact. Penjelasan terkait atribut dan juga method yang terdapat pada kelas ini adalah sebagai berikut:
+    \begin{itemize}
+        \item Atribut menu: memanggil kelas menu.
+        \item Atribut route: melakukan routing terhadap path yang ingin dibuka.
+        \item Method setupIonicReact: melakukan setup pada aplikasi dengan menggunakan IonicConfig yang sudah disediakan dari library.
+    \end{itemize}
+
+    \item Kelas Menu
+
+    Kelas Menu berfungsi untuk melakukan pemanggilan terhadap halaman Latest News dan juga Teammate Photos. Pada kelas ini, terdapat atribut appPages yang berfungsi untuk menyimpan halaman dari aplikasi Rugby Indonesia. Penjelasan terkait atribut dan juga method yang terdapat pada kelas ini adalah sebagai berikut:
+    \begin{itemize}
+        \item Atrbut appPages: berfungsi untuk menyimpan halaman dari aplikasi yang disimpan ke dalam array.
+        \item Method render: berfungsi untuk melakukan render menu pada aplikasi Rugby Indonesia.
+    \end{itemize}
+
+    \item Kelas NewsPage
+
+    Kelas NewsPage bertugas untuk menampilkan berita-berita terkini seputar Rugby Indonesia. Pada kelas ini, terdapat State newsItems, isOpen, dan juga selectedItemIndex. Pada kelas ini juga terdapat method useEffect, fetchData, openModal, dan juga render. Penjelasan terkait atribut state dan juga method yang terdapat pada kelas ini adalah sebagai berikut:
+
+    \begin{itemize}
+        \item State newsItems: berfungsi untuk menyimpan berita yang sudah diambil menggunakan protokol RSS.
+        \item State isOpen: berfungsi untuk menentukan apakah modal dalam keadaan terbuka atau tidak.
+        \item SelectedItemIndex: berfungsi untuk menampilkan isi dari modal yang telah dipilih.
+        \item Method useEffect: melakukan pengambilan data yang berasal dari sistem eksternal.
+        \item Method fetchData: melakukan pengambilan data dari url menggunakan axios.
+        \item Method openModal: menampilkan isi konten menggunakan modal.
+    \end{itemize}
+
+    \item Kelas TeammatePhotosPage
+
+    Kelas TeammatePhotosPage bertugas untuk menampilkan foto-foto yang telah diunggah oleh pengguna aplikasi Rugby Indonesia, serta melakukan \textit{upload} foto agar foto tersebut dapat dilihat oleh pengguna aplikasi Rugby Indonesia lainnya dengan cara mengambil foto tersebut secara langsung atau melakukan \textit{upload} foto dari galeri ponsel pengguna. Pada kelas ini, terdapat State images, isOpen, dan juga takenPhoto. Pada kelas ini juga terdapat method useEffect, takePicture, choosePicture, handleFrameSelection, editPhoto, uploadPhoto. Penjelasan dari masing-masing atribut state dan juga method adalah sebagai berikut:
+
+    \begin{itemize}
+        \item State images: berfungsi untuk menyimpan foto yang diambil menggunakan protokol RSS.
+        \item State isOpen: berfungsi untuk menentukan apakah modal dalam keadaan terbuka atau tidak.
+        \item takenPhoto: berfungsi untuk menyimpan dahulu foto sebelum pengguna melakukan pemilihan frame.
+        \item Method useEffect: melakukan pengambilan data yang berasal dari sistem eksternal.
+        \item Method takePicture: melakukan pengambilan gambar menggunakan kamera.
+        \item Method choosePicture: melakukan pengambilan gambar yang berasal dari galeri.
+        \item Method handleFrameSeelction: melakukan penanganan terhadap frame yang sudah dipilih untuk dikirim ke method editPhoto.
+        \item Method editPhoto: melakukan penggabungan antara foto dan juga frame yang telah dipilih oleh pengguna sebelum gambar tersebut iupload.
+        \item Method uploadPhoto: melakukan pengunggahan gambar ke server menggunakan metode post.
+    \end{itemize}
+    
+\end{enumerate}
+
+\section{Perancangan Antarmuka}
+
+Berikut ini merupakan perancangan antarmuka dari aplikasi Rugby Indonesia untuk pengguna dari aplikasi ini.
+
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[scale=0.225]{Gambar/Latest_News UI Dev Rev1.png}
+        \caption{Perancangan Antarmuka Halaman Latest News}
+        \label{fig:latest-news-ui-dev}
+     \end{subfigure}
+     \hspace*{0.5in}
+     \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[scale=0.225]{Gambar/News_Description UI Dev Rev1.png}
+        \caption{Perancangan Antarmuka Halaman Deskripsi Berita}
+        \label{fig:news-description-ui-dev}
+     \end{subfigure}
+        \caption{Perancangan Antarmuka Bagian Latest News}
+        \label{fig:latest-news-page-full-design}
+\end{figure}
+
+\subsection{Perancangan Antarmuka Halaman Latest News}
+
+Pada halaman Latest News, informasi yang akan ditampilkan oleh halaman ini berisi berita-berita terkini seputar Rugby Indonesia. Gambar perancangan dari halaman Latest News dapat dilihat pada Gambar \ref{fig:latest-news-ui-dev}. Pada gambar tersebut, terdapat toolbar dari halaman Latest News yang berisi tombol home, nama dari aplikasi, dan juga tombol menu. Di bawah toolbar, terdapat banner dari halaman Latest News. Lalu terdapat konten yang berisi dari gambar headline berita, judul berita, dan deskripsi singkat dari berita tersebut. Pengguna dapat melihat deskripsi lengkap dari berita tersebut dengan melakukan klik pada tulisan ``Read More...'' yang terletak di bawah deskripsi singkat berita.
+
+\subsection{Perancangan Antarmuka Deskripsi Berita}
+
+Halaman ini hanya akan menampilkan detail dari berita yang ingin dibaca lebih lanjut oleh pengguna. Gambar perancangan dari halaman Latest News dapat dilihat pada Gambar \ref{fig:news-description-ui-dev}. Pada gambar tersebut, terdapat toolbar yang berisi judul berita dan juga tombol ``CLOSE'' untuk menutup detail dari berita. Di bawah toolbar, terdapat konten dari berita yang berisi gambar headline berita, judul berita, lalu deskripsi lengkap dari berita.
+
+\begin{figure}[H]
+     \centering
+     \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[scale=0.225]{Gambar/Teammate_Photos UI Dev.png}
+        \caption{Perancangan Antarmuka Halaman Teammate Photos}
+        \label{fig:teammate-photos-ui-dev}
+     \end{subfigure}
+     \hspace*{0.5in}
+     \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[scale=0.225]{Gambar/Select_Frame UI Dev.png}
+        \caption{Perancangan Antarmuka Halaman Pemilihan Frame}
+        \label{fig:select-frame-ui-dev}
+     \end{subfigure}
+        \caption{Perancangan Antarmuka Bagian Teammate Photos}
+        \label{fig:teammate-photos-page-full-design}
+\end{figure}
+
+\subsection{Perancangan Antarmuka Halaman Teammate Photos}
+
+Pada halaman Teammate Photos, informasi yang akan ditampilkan oleh halaman ini berisi foto-foto yang telah diunggah oleh para pengguna aplikasi Rugby Indonesia, serta tombol ``TAKE PHOTO'' dan ``LOAD FROM LIBRARY'' yang berfungsi untuk melakukan pengunggahan foto. Gambar perancangan dari halaman Teammate Photos dapat dilihat pada Gambar \ref{fig:teammate-photos-ui-dev}.
+
+\subsection{Perancangan Antarmuka Halaman Frame}
+
+Halaman ini hanya akan menampilkan pilihan frame yang dapat digunakan oleh pengguna Rugby Indonesia setelah pengguna melakukan pengambilan gambar menggunakan kamera atau melakukan pemilihan gambar yang berasal dari galeri. Gambar dari halaman ini dapat dilihat pada Gambar \ref{fig:select-frame-ui-dev}, di mana pada gambar tersebut terdapat tombol ``CLOSE'' apabila pengguna tidak jadi melakukan pengunggahan gambar dan juga pilihan frame yang tersedia.
+
+\section{Perancangan Struktur HTML}
+Struktur HTML dari setiap halaman memiliki struktur yang sama, di mana pada setiap halaman terdapat header dan juga content. Header dan content yang terdapat pada struktur ini memiliki penjelasan sebagai berikut:
+
+\subsection{Header}
+Header dari setiap halaman memiliki struktur yang sama, di mana pada setiap halaman, header menggunakan komponen <IonHeader> dan memiliki komponen <IonToolbar>, <IonButtons>, dan juga <IonTitle> di dalam header tersebut. Hal yang membedakan dari tiap header hanya berupa judul yang berada di dalam komponen <IonTitle> dan juga button yang terdapat pada header tersebut.
+
+\subsection{Content}
+Content pada setiap halaman menggunakan komponen <IonContent> di mana struktur konten pada tiap halaman ini cukup berbeda. Struktur dari content sangat bergantung pada isi dari tiap halaman. Isi dari content pada tiap halaman adalah sebagai berikut:
+
+\begin{itemize}
+    \item Halaman Latest News
+
+    Content yang terdapat pada halaman Latest News berisi banner dari halaman Latest News, dan juga berita terkini seputar Rugby Indonesia. Pada tiap berita yang berada di halaman Latest News, berita tersebut dibungkus di dalam komponen <IonCard> yang memiliki komponen <IonCardHeader> sebagai header dari berita dan juga komponen <IonCardContent> sebagai konten dari berita tersebut. 
+
+    \item Halaman Teammate Photos
+
+    Content yang terdapat pada halaman Teammate Photos berisi banner dari halaman Teammate Photos, tombol untuk melakukan pengambilan gambar menggunakan kamera, tombol untuk melakukan pengunggahan gambar dari galeri, serta komponen <PhotoGallery> yang berisi gambar yang telah diunggah oleh pengguna. 
+\end{itemize}

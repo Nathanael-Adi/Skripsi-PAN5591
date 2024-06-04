@@ -4,7 +4,7 @@
 Bab analisis ini akan menjelaskan tentang analisis dari aplikasi Rugby Indonesia yang ada serta analisis dari aplikasi Rugby Indonesia yang akan dibangun. Analisis yang akan dibahas pada bab ini meliputi Use Case Diagram, analisis kebutuhan sistem kini serta analisis sistem usulan.
 
 \section{Analisis Sistem Kini}
-Analisis sistem kini yang dilakukan pada subbab ini dilakukan dengan cara menganalisis aplikasi Rugby Indonesia berdasarkan hasil tangkapan layar yang terdapat pada Google Play Store. Hal ini dilakukan karena peneliti tidak memiliki kode dari aplikasi yang sudah ada. Aplikasi Rugby Indonesia yang ada pada Google Play Store memiliki halaman utama yang berisi berita-berita terkini terkait permainan \textit{rugby} yang ada di Indonesia, \textit{toolbar} yang berisikan tombol \textit{home} untuk kembali ke halaman utama, dan tombol menu untuk berpindah ke menu lainnya. Selain berfungsi untuk membaca berita, aplikasi yang ada ini berfungsi untuk menangkap gambar dan meng-\textit{upload}-nya pada halaman \textit{Teammate Photo}, melihat \textit{Rugby Clubs} yang berada di tiap daerah, serta dapat melihat skor dari tiap pertandingan pada halaman \textit{Fixture \& Results}. Fungsi dari aplikasi Rugby Indonesia dapat dilihat pada (Gambar \ref{fig:ucd-rugby-indonesia-app}).
+Analisis sistem kini yang dilakukan pada subbab ini dilakukan dengan cara menganalisis aplikasi Rugby Indonesia berdasarkan hasil tangkapan layar yang terdapat pada Google Play Store. Hal ini dilakukan karena peneliti tidak memiliki kode dari aplikasi yang sudah ada. Aplikasi Rugby Indonesia yang ada pada Google Play Store memiliki halaman utama yang berisi berita-berita terkini terkait permainan \textit{rugby} yang ada di Indonesia, \textit{toolbar} yang berisikan tombol \textit{home} untuk kembali ke halaman utama, dan tombol menu untuk berpindah ke menu lainnya. Selain berfungsi untuk membaca berita, aplikasi yang ada ini berfungsi untuk menangkap gambar dan meng-\textit{upload}-nya pada halaman \textit{Teammate Photo}, melihat \textit{Rugby Clubs} yang berada di tiap daerah, serta dapat melihat skor dari tiap pertandingan pada halaman \textit{Fixture \& Results}. Fungsi dari aplikasi Rugby Indonesia dapat dilihat pada Gambar \ref{fig:ucd-rugby-indonesia-app}.
 
 \begin{figure} [H]
     \centering
@@ -14,7 +14,7 @@ Analisis sistem kini yang dilakukan pada subbab ini dilakukan dengan cara mengan
 \end{figure}
 
 \subsection{Halaman Utama}
-Pada halaman Utama dari Rugby Indonesia, terdapat berita-berita terkini yang diambil dari halaman \url{rugbyindonesia.or.id/berita/}, tombol `\textit{read more}' untuk melihat berita yang ingin dibaca lebih lengkap. Halaman ini merupakan halaman awal saat pengguna membuka aplikasi Rugby Indonesia pertama kali. Skenario penggunaan awal aplikasi Rugby Indonesia terdapat pada (Tabel \ref{tab:existing-scenario-welcome-page}), di mana pada tabel skenario tersebut, saat aplikasi pertama kali dibuka, aplikasi akan langsung mengarahkan pengguna ke dalam halaman\textit{ Latest News}.
+Pada halaman Utama dari Rugby Indonesia, terdapat berita-berita terkini yang diambil dari halaman \url{rugbyindonesia.or.id/berita/}, tombol `\textit{read more}' untuk melihat berita yang ingin dibaca lebih lengkap. Halaman ini merupakan halaman awal saat pengguna membuka aplikasi Rugby Indonesia pertama kali. Skenario penggunaan awal aplikasi Rugby Indonesia terdapat pada Tabel \ref{tab:existing-scenario-welcome-page}, di mana pada tabel skenario tersebut, saat aplikasi pertama kali dibuka, aplikasi akan langsung mengarahkan pengguna ke dalam halaman\textit{ Latest News}.
 
 \begin{table} [!h]
     \centering
@@ -37,7 +37,7 @@ Pada halaman Utama dari Rugby Indonesia, terdapat berita-berita terkini yang dia
 
 \subsection{Halaman Teammate Photos}
 
-Pada halaman \textit{teammate Photos}, pengguna dapat melihat serta meng-\textit{upload} gambar maupun tangkapan gambar yang ingin diunggah ke dalam halaman ini. Pengguna juga dapat memberikan \textit{frame} terhadap foto yang ingin diunggahnya. Skenario pengguna saat berada pada halaman Teammate Photos terdapat pada (Tabel \ref{tab:existing-scenario-teammate-photos-page}).
+Pada halaman \textit{teammate Photos}, pengguna dapat melihat serta meng-\textit{upload} gambar maupun tangkapan gambar yang ingin diunggah ke dalam halaman ini. Pengguna juga dapat memberikan \textit{frame} terhadap foto yang ingin diunggahnya. Skenario pengguna saat berada pada halaman Teammate Photos terdapat pada Tabel \ref{tab:existing-scenario-teammate-photos-page}.
 
 \begin{table} [!h]
     \centering
@@ -58,7 +58,7 @@ Pada halaman \textit{teammate Photos}, pengguna dapat melihat serta meng-\textit
 \end{table}
 
 \subsection{Halaman Rugby Clubs}
-Pada halaman Rugby Clubs, pengguna dapat melihat informasi terkait klub \textit{rugby} yang berada di tiap daerah. Skenario pengguna saat berada pada halaman Rugby Clubs terdapat pada (Tabel \ref{tab:existing-scenario-rugby-clubs-page}).
+Pada halaman Rugby Clubs, pengguna dapat melihat informasi terkait klub \textit{rugby} yang berada di tiap daerah. Skenario pengguna saat berada pada halaman Rugby Clubs terdapat pada Tabel \ref{tab:existing-scenario-rugby-clubs-page}.
 
 \begin{table} [H]
     \centering
@@ -73,7 +73,7 @@ Pada halaman Rugby Clubs, pengguna dapat melihat informasi terkait klub \textit{
 \end{table}
 
 \subsection{Halaman Fixture \& Results}
-Pada halmaan Fixture \& Results, pengguna dapat melihat hasil pertandingan skor dari permainan rugby yang sudah diselenggarakan. Skenario pengguna saat berada pada halaman Fixture \& Results terdapat pada (Tabel \ref{tab:existing-scenario-fixture-results-page}).
+Pada halmaan Fixture \& Results, pengguna dapat melihat hasil pertandingan skor dari permainan rugby yang sudah diselenggarakan. Skenario pengguna saat berada pada halaman Fixture \& Results terdapat pada Tabel \ref{tab:existing-scenario-fixture-results-page}.
 
 \begin{table} [!h]
     \centering
@@ -91,7 +91,7 @@ Pada halmaan Fixture \& Results, pengguna dapat melihat hasil pertandingan skor 
 
 \section{Analisis Masalah Aplikasi Rugby Indonesia}
 
-Aplikasi Rugby Indoensia saat ini menggunakan \textit{framework} Ionic versi 3, Apache Cordova, dan Angular. \textit{Framework} yang digunakan oleh aplikasi Rugby Indonesia saat ini sudah cukup lawas, sehingga aplikasi Rugby Indonesia saat ini sudah tidak dapat dibuka kembali. Ketika membuka aplikasi Rugby Indonesia, pengguna akan terhambat pada bagian halaman utama di mana pada bagian tersebut, pengguna hanya akan melihat \textit{loading circle} yang terus berputar dengan tulisan `\textit{please wait}' seperti pada (Gambar \ref{fig:first-page-rugby-indonesia-app}).
+Aplikasi Rugby Indoensia saat ini menggunakan \textit{framework} Ionic versi 3, Apache Cordova, dan Angular. \textit{Framework} yang digunakan oleh aplikasi Rugby Indonesia saat ini sudah cukup lawas, sehingga aplikasi Rugby Indonesia saat ini sudah tidak dapat dibuka kembali. Ketika membuka aplikasi Rugby Indonesia, pengguna akan terhambat pada bagian halaman utama di mana pada bagian tersebut, pengguna hanya akan melihat \textit{loading circle} yang terus berputar dengan tulisan `\textit{please wait}' seperti pada Gambar \ref{fig:first-page-rugby-indonesia-app}.
 
 \begin{figure} [H]
     \centering
@@ -101,17 +101,62 @@ Aplikasi Rugby Indoensia saat ini menggunakan \textit{framework} Ionic versi 3, 
 \end{figure}
 
 \section{Analisis RSS Rugby Indonesia}
-Situs web Rugby Indonesia saat ini memiliki RSS bertipe XML yang terdapat pada \url{https://dnartworks.rugbyindonesia.or.id/indonesianrugby/news/list.xml}. RSS tersebut dapat digunakan untuk melakukan pembangunan aplikasi Rugby Indonesia dengan cara mengambil beberapa objek seperti title dan description yang terdapat pada RSS tersebut. tangkapan layar RSS dari Rugby Indonesia terdapat pada (Gambar \ref{fig:rss-rugby-indonesia}).
+Situs web Rugby Indonesia saat ini memiliki RSS bertipe XML yang terdapat pada \url{https://dnartworks.rugbyindonesia.or.id/indonesianrugby/news/list.xml}. RSS tersebut dapat digunakan untuk melakukan pembangunan aplikasi Rugby Indonesia dengan cara mengambil beberapa objek seperti title dan description yang terdapat pada RSS tersebut. tangkapan layar RSS dari Rugby Indonesia terdapat pada Kode \ref{kode:rss-rugby-indonesia}.
 
-\begin{figure} [H]
-    \centering
-    \includegraphics[scale=0.4]{Gambar/Tangkapan RSS Rugby Indonesia.png}
-    \caption{Tangkapan Layar RSS Rugby Indonesia}
-    \label{fig:rss-rugby-indonesia}
-\end{figure}
+\begin{lstlisting}[language=HTML, caption=Potongan Kode RSS Rugby Indonesia, label=kode:rss-rugby-indonesia]
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/" version="2.0">
+    <channel>
+        <title>Persatuan Rugby Union Indonesia</title>
+        <atom:link href="https://rugbyindonesia.or.id/feed/" rel="self" type="application/rss+xml" />
+        <link>https://rugbyindonesia.or.id</link>
+        <description>Play Rugby</description>
+        <lastBuildDate>Tue, 30 Jan 2024 06:46:29 +0000</lastBuildDate>
+        <language>en-US</language>
+        <sy:updatePeriod> hourly </sy:updatePeriod>
+        <sy:updateFrequency> 1 </sy:updateFrequency>
+        <generator>https://wordpress.org/?v=6.4.4</generator>
+        <image>
+            <url>
+                https://rugbyindonesia.or.id/wp-content/uploads/2016/03/cropped-PRUI-Default-Logo-32x32.jpg</url>
+            <title>Persatuan Rugby Union Indonesia</title>
+            <link>https://rugbyindonesia.or.id</link>
+            <width>32</width>
+            <height>32</height>
+        </image>
+        <item>
+            <title>Rugby Masuk Sekolah di Kalimantan Timur</title>
+            <link>https://rugbyindonesia.or.id/rugby-masuk-sekolah-di-kalimantan-timur/</link>
+            <dc:creator>
+<![CDATA[ hambali ]]>
+</dc:creator>
+            <pubDate>Tue, 30 Jan 2024 06:46:29 +0000</pubDate>
+            <category>
+<![CDATA[ Rugby Masuk sekolah ]]>
+</category>
+            <guid isPermaLink="false">https://rugbyindonesia.or.id/?p=6435</guid>
+            <description>
+<![CDATA[ <!-- thumbnail:&lt;img width=&quot;820&quot; height=&quot;490&quot; src=&quot;https://rugbyindonesia.or.id/wp-content/uploads/2024/01/Kaltim-820x490.jpg&quot; class=&quot;attachment-post-thumbnail size-post-thumbnail wp-post-image&quot; alt=&quot;&quot; decoding=&quot;async&quot; fetchpriority=&quot;high&quot; /&gt;--><!-- wp:paragraph --> <p>2 Januari 2024, [NEWS] Kalimantan Timur semangat menjalankan program Rugby Masuk Sekolah. Pengurus PRUI Kalimantan Timur langsung mulai di SDN 12 Sambutan, Samarinda. Target awalnya, PRUI Kalimantan Timur akan menjalankan program ini di 8 sekolah.</p> <!-- /wp:paragraph --> ]]>
+</description>
+            <content:encoded>
+<![CDATA[ <!-- thumbnail:&lt;img width=&quot;820&quot; height=&quot;490&quot; src=&quot;https://rugbyindonesia.or.id/wp-content/uploads/2024/01/Kaltim-820x490.jpg&quot; class=&quot;attachment-post-thumbnail size-post-thumbnail wp-post-image&quot; alt=&quot;&quot; decoding=&quot;async&quot; /&gt;--><!-- wp:paragraph --> <p>2 Januari 2024, [NEWS] Kalimantan Timur semangat menjalankan program Rugby Masuk Sekolah. Pengurus PRUI Kalimantan Timur langsung mulai di SDN 12 Sambutan, Samarinda. Target awalnya, PRUI Kalimantan Timur akan menjalankan program ini di 8 sekolah.</p> <!-- /wp:paragraph --> ]]>
+</content:encoded>
+        </item>
+    </channel>
+</rss>
+\end{lstlisting}
+
+% \begin{figure} [H]
+%     \centering
+%     \includegraphics[scale=0.4]{Gambar/Tangkapan RSS Rugby Indonesia.png}
+%     \caption{Tangkapan Layar RSS Rugby Indonesia}
+%     \label{fig:rss-rugby-indonesia}
+% \end{figure}
 
 \section{Analisis Sistem Usulan}
-Aplikasi Rugby Indonesia yang akan dibangun hampir sama seperti aplikasi dengan sistem terkini, namun dengan tidak adanya halaman Fixture \& Results, Rugby Clubs dan fitur Push Notification dikarenakan website dari Rugby Indonesia sendiri yang sudah dipangkas sehingga tidak memiliki halaman-halaman tersebut. Maka dari itu, fungsi dari aplikasi Rugby Indonesia akan berubah, dan dapat dilihat seperti pada (Gambar \ref{fig:proposal-ucd-rugby-indonesia}).
+Aplikasi Rugby Indonesia yang akan dibangun hampir sama seperti aplikasi dengan sistem terkini, namun dengan tidak adanya halaman Fixture \& Results, Rugby Clubs dan fitur Push Notification dikarenakan website dari Rugby Indonesia sendiri yang sudah dipangkas sehingga tidak memiliki halaman-halaman tersebut. Maka dari itu, fungsi dari aplikasi Rugby Indonesia akan berubah, dan dapat dilihat seperti pada Gambar \ref{fig:proposal-ucd-rugby-indonesia}.
 
 \begin{figure} [H]
     \centering
@@ -121,7 +166,7 @@ Aplikasi Rugby Indonesia yang akan dibangun hampir sama seperti aplikasi dengan 
 \end{figure}
 
 \subsection{Halaman Utama}
-Pada halaman utama, skenario dari penggunaan aplikasi Rubgy Indoensia pada halaman utama sama seperti tabel skenario halaman utama dari sistem kini pada (Tabel \ref{tab:existing-scenario-welcome-page}). Halaman ini memiliki beberapa komponen yang terdapat pada Ionic 7, komponen tersebut berupa Toolbar, Content, dan Card. Analisis dari komponen yang digunakan terdapat pada (Gambar \ref{fig:homepage-analytics}).
+Pada halaman utama, skenario dari penggunaan aplikasi Rugby Indonesia pada halaman utama sama seperti tabel skenario halaman utama dari sistem kini pada Tabel \ref{tab:existing-scenario-welcome-page}. Halaman ini memiliki beberapa komponen yang terdapat pada Ionic 7, komponen tersebut berupa Toolbar, Content, dan Card. Analisis dari komponen yang digunakan terdapat pada Gambar \ref{fig:homepage-analytics}.
 
 \begin{figure} [H]
     \centering
@@ -150,7 +195,7 @@ Pada halaman utama, skenario dari penggunaan aplikasi Rubgy Indoensia pada halam
 % );
 % \end{lstlisting}
 
-% Pada (Kode \ref{kode:main-tsx}), metode \texttt{defineCustomElements} dipanggil dengan parameter \texttt{window}. metode defineCustomElements berfungsi sebagai element loader. Kode \texttt{document.getElementById} \texttt{('root')} digunakan untuk mendapatkan elemen dengan id `root'. Kode \texttt{createRoot} digunakan untuk membuat root element di mana kode ini akan menerima elemen yang akan dijadikan root.
+% Pada Kode \ref{kode:main-tsx}, metode \texttt{defineCustomElements} dipanggil dengan parameter \texttt{window}. metode defineCustomElements berfungsi sebagai element loader. Kode \texttt{document.getElementById} \texttt{('root')} digunakan untuk mendapatkan elemen dengan id `root'. Kode \texttt{createRoot} digunakan untuk membuat root element di mana kode ini akan menerima elemen yang akan dijadikan root.
 
 % Kode \texttt{root.render} digunakan untuk merender aplikasi React di dalam root element yang sudah dibuat. Kode \texttt{<React.StrictMode>} digunakan untuk mengaktifkan Strict Mode. Ini membantu mendeteksi masalah pada waktu kompilasi dan memberikan peringatan tambahan saat pengembangan. Kode \texttt{<App />} adalah komponen utama yang dirender di dalam Strict Mode. Komponen ini yang akan merender file App.tsx.
 
@@ -279,7 +324,7 @@ Pada halaman utama, skenario dari penggunaan aplikasi Rubgy Indoensia pada halam
 % Kode ini \ref{kode:latest-news-tsx} akan menampilkan halaman Latest News yang memiliki komponen toolbar, button, content, dan card. Content dari halaman ini berisi berita-berita yang terdapat pada \url{https://rugbyindonesia.or.id/berita/}.
 
 \subsection{Halaman Teammate Photos}
-Pada halaman Teammate Photos, skenario dari aplikasi Rugby Indonesia sama dengan skenario dari halaman Teammate Photos yang sudah ada pada (Tabel \ref{tab:existing-scenario-teammate-photos-page}), namun dengan adanya sedikit penambahan, yaitu skenario di saat pengguna mengupload gambar. Penambahan ini dilakukan karena peneliti tidak menemukan gambar di saat pengguna melakukan \textit{upload} gambar. Penambahan dari skenario disaat pengguna melakukan upload gambar terdapat pada (Tabel \ref{tab:usulan-skenario-halaman-teammate-photos}).
+Pada halaman Teammate Photos, skenario dari aplikasi Rugby Indonesia sama dengan skenario dari halaman Teammate Photos yang sudah ada pada Tabel \ref{tab:existing-scenario-teammate-photos-page}, namun dengan adanya sedikit penambahan, yaitu skenario di saat pengguna mengupload gambar. Penambahan ini dilakukan karena peneliti tidak menemukan gambar di saat pengguna melakukan \textit{upload} gambar. Penambahan dari skenario disaat pengguna melakukan upload gambar terdapat pada Tabel \ref{tab:usulan-skenario-halaman-teammate-photos}.
 \begin{table} [H]
     \centering
     \caption{Tabel Skenario saat Pengguna Mengupload Gambar}
@@ -289,18 +334,16 @@ Pada halaman Teammate Photos, skenario dari aplikasi Rugby Indonesia sama dengan
         1 & Pengguna menekan tombol  & Aplikasi akan membuka kamera \\
          & ``Take a Photo''. & pada \textit{smartphone}. \\ \hline
         2 & Pengguna mengambil gambar & Aplikasi akan menampilkan \\ 
-         & dari kamera. & Cards yang berisi frame \\ \hline
-        3 & Pengguna memilih salah satu frame & Aplikasi akan menampilkan \\ 
-         & lalu mengklik tombol ``OK'' & konfirmasi \\ \hline
-        4 & Pengguna mengklik & Sistem akan mengunggah gambar \\ 
-         & tombol ``YA'' & ke dalam aplikasi. \\ \hline
+         & dari kamera. & halaman frame \\ \hline
+        3 & Pengguna memilih salah satu frame &  Sistem akan mengunggah gambar \\
+         & & ke dalam aplikasi. \\ \hline
     \end{tabular}
     \label{tab:usulan-skenario-halaman-teammate-photos}
 \end{table}
 
-Skenario pada (Tabel \ref{tab:usulan-skenario-halaman-teammate-photos}) juga berlaku ketika pengguna menekan tombol ``LOAD FROM LIBRARY'', hanya saja perbedaannya terdapat pada reaksi sistem, yaitu Aplikasi akan membuka \textit{gallery} dari \textit{smartphone} pengguna.
+Skenario pada Tabel \ref{tab:usulan-skenario-halaman-teammate-photos} juga berlaku ketika pengguna menekan tombol ``LOAD FROM LIBRARY'', hanya saja perbedaannya terdapat pada reaksi sistem, yaitu Aplikasi akan membuka \textit{gallery} dari \textit{smartphone} pengguna.
 
-Pada halaman Teammate Photos, terdapat beberapa komponen dari Ionic 7 yang digunakan. Halaman ini memiliki beberapa komponen, yaitu toolbar, button, content, dan juga card. Analisis dari komponen yang digunakan terdapat pada (Gambar \ref{fig:teammate-photos-analytics}).
+Pada halaman Teammate Photos, terdapat beberapa komponen dari Ionic 7 yang digunakan. Halaman ini memiliki beberapa komponen, yaitu toolbar, button, content, dan juga card. Analisis dari komponen yang digunakan terdapat pada Gambar \ref{fig:teammate-photos-analytics}.
 
 \begin{figure} [H]
     \centering

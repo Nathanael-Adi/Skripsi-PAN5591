@@ -1,0 +1,134 @@
+\chapter{Implementasi dan Pengujian}
+\label{chap:implementasi-dan-pengujian}
+
+\section{Spesifikasi Perangkat Lunak}
+Pembangunan dari aplikasi Rugby Indonesia dilakukan dengan perangkat keras yang memiliki spesifikasi sebagai berikut:
+\begin{itemize}
+    \item Sistem Operasi: Windows 11 Home Single Language versi 23H2 64-bit
+    \item Android Development Kit: API 29 (Android 10)
+    \item Ionic: 7.0.0
+    \item Capacitor CLI: 5.4.0
+    \item Bahasa Pemrograman: JavaScript
+    \item \textit{Tools}: Visual Studio Code, Android Studio
+\end{itemize}
+
+\section{Implementasi Antarmuka}
+Berikut ini merupakan hasil implementasi antarmuka pada aplikasi Rugby Indonesia.
+\subsection{Implementasi Antarmuka News Page}
+Ketika pengguna telah mengunduh aplikasi Rugby Indonesia dan membukanya, aplikasi tersebut akan menampilkan halaman Latest News seperti yang terdapat pada Gambar \ref{fig:latest-news-app}.
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[scale=0.4]{Gambar/Latest_News_App.png}
+    \caption{Halaman Latest News pada Aplikasi Rugby Indonesia}
+    \label{fig:latest-news-app}
+\end{figure}
+
+\subsection{Implementasi Antarmuka News Detail}
+Halaman ini muncul ketika pengguna telah melakukan klik pada tulisan ``Read More...'' yang tertera di bawah deskripsi singkat dari masing-masing berita. Tampilan dari halaman ini terdapat pada Gambar \ref{fig:news-description-app}.
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[scale=0.4]{Gambar/News_Description_App.png}
+    \caption{Halaman Deskripsi Berita pada Aplikasi Rugby Indonesia}
+    \label{fig:news-description-app}
+\end{figure}
+
+\subsection{Implementasi Antarmuka Teammate Photos Page}
+Halaman ini ditampilkan ketika pengguna telah melakukan klik pada tombol menu di kanan atas pada halaman Latest News dan memilih menu Teammate Photos. Tampilan dari halaman ini terdapat pada Gambar \ref{fig:teammate-photos-app}.
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[scale=0.4]{Gambar/Teammate_Photos_App.png}
+    \caption{Halaman Teammate Photos pada Aplikasi Rugby Indonesia}
+    \label{fig:teammate-photos-app}
+\end{figure}
+
+\subsection{Implementasi Antarmuka Halaman Frame}
+Halaman ini ditampilkan ketika pengguna telah melakukan pengambilan foto dengan melakukan klik pada tombol ``TAKE PHOTO'' yang terdapat pada halaman Teammate Photos atau telah melakukan pemilihan foto dari galeri dengan melakukan klik pada tombol ``UPLOAD FROM LIBRARY'' yang terdapat pada halaman Teammate Photos juga. Tampilan dari halaman ini terdapat pada Gambar \ref{fig:select-frame-app}
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[scale=0.4]{Gambar/Select_Frame_App.png}
+    \caption{Halaman emilihan Frame pada Aplikasi Rugby Indonesia}
+    \label{fig:select-frame-app}
+\end{figure}
+
+\section{Pengujian Fungsional}
+Pada pengujian ini, dilakukan dengan beberapa tahapan yang dilakukan dengan aplikasi Rugby Indonesia. Tahapan tersebut terdapat pada Tabel \ref{tab:see-news-test} dan Tabel \ref{tab:view-and-upload-image-test} berikut ini.
+
+\subsection{Pengujian Melihat Berita}
+\begin{table} [H]
+    \centering
+    \caption{Tabel Pengujian Melihat Berita}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+       No. & Langkah pengujian & Hasil yang diharapkan & Status  \\ \hline
+        1 & Menekan tombol home & Kembali ke awal & Berhasil \\
+         & pada toolbar & halaman Latest News &  \\ \hline
+        2 & Menekan tombol menu & Menampilkan menu & Berhasil \\
+         & pada toolbar & aplikasi Rugby Indonesia &  \\ \hline
+        3 & Menekan tulisan ``Read More...'' & Menampilkan deskripsi & Berhasil \\
+         & pada salah satu berita & berita secara detail &  \\
+          \hline
+      4 & Menekan tombol ``CLOSE'' pada & Kembali ke halaman & Berhasil \\
+     & toolbar di halaman News Detail & Latest News &  \\
+      \hline
+    \end{tabular}
+    \label{tab:see-news-test}
+\end{table}
+
+\subsection{Pengujian Melihat dan Melakukan Upload Gambar}
+\begin{table} [H]
+    \centering
+    \caption{Tabel Pengujian Melihat dan Melakukan Upload Gambar}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+       No. & Langkah pengujian & Hasil yang diharapkan & Status  \\ \hline
+        1 & Menekan tombol home & Kembali ke & Berhasil \\
+         & pada toolbar & halaman Latest News &  \\ \hline
+     2 & Menekan tombol menu & Menampilkan menu dari & Berhasil \\
+     & pada toolbar & aplikasi Rugby Indonesia &  \\ \hline
+     3 & Menekan tombol & Membuka kamera untuk & Berhasil \\
+     & ``TAKE PHOTO'' & mengambil gambar &  \\ \hline
+     4 & Selesai mengambil gambar & Menampilkan halaman pemilihan frame & Berhasil \\ \hline
+      &  & Kembali ke halaman Teammate &  \\
+    5 & Memilih salah satu frame &  Photos dan menampilkan  & Berhasil \\
+     &  &  gambar yang telah diunggah &  \\ \hline
+      & Menekan tombol ``CLOSE'' & Kembali ke halaman Teammate  &  \\
+   6 & pada halaman pemilihan frame & Photos dan tidak menampilkan  & Berhasil \\
+     &  & gambar yang ingin diunggah &  \\ \hline
+     7 & Menekan tombol & Membuka galeri & Berhasil \\
+     & ``CHOOSE FROM LIBRARY'' &  &  \\ \hline
+     8 & Selesai memilih gambar & Menampilkan halaman pemilihan frame & Berhasil \\
+     & dari galeri &  &  \\ \hline
+    \end{tabular}
+    \label{tab:view-and-upload-image-test}
+\end{table}
+
+\section{Pengujian oleh Pengguna Umum}
+Hasil pengujian berikut ini dilakukan oleh pengguna umum (\textit{User Acceptance Test}) di mana pengujian ini dilakukan oleh 6 orang responden. Responden yang melakukan pengujian kali ini merupakan penggemar olahraga dengan rentang umur 21 hingga 23 tahun yang memiliki \textit{smartphone} dengan sistem operasi Android. Responden melakukan pengujian aplikasi Rugby Indonesia dengan cara responden mengunduh aplikasi Rugby Indonesia dari tautan yang terdapat pada Google Form yang mengarahkan responden ke Google Drive. Hasil dari pengujian ini terdapat pada Tabel \ref{tab:user-acceptance-test}.
+
+\begin{table} [H]
+    \centering
+    \caption{Tabel Pengujian oleh Pengguna Umum}
+    \begin{tabular}{|c|c|c|}
+    \hline
+       No. & Pertanyaan & Jawaban dari responden  \\ \hline
+       1 & Apakah aplikasi dapat menampilkan halaman & 6 menjawab Ya \\ 
+        & Latest News saat pertama kali dibuka? &  \\ \hline
+    2 & Apakah seluruh berita yang terdapat & 5 menjawab Ya, \\
+       &  pada halaman Latest News ditampilkan dengan baik? & 1 menjawab Tidak \\ \hline
+       3 & Apakah tombol "TAKE PHOTO" & 6 menjawab Ya \\
+     & dapat membuka kamera smartphone? & \\ \hline
+     4 & Apakah tombol "LOAD FROM LIBRARY" & 6 menjawab Ya \\
+     & dapat membuka galeri smartphone? & \\ \hline
+     & Apakah Anda mengalami kendala saat melakukan & \\
+      5 & pengambilan gambar atau mengupload gambar dari & 6 menjawab Tidak \\
+     & galeri menggunakan aplikasi Rugby Indonesia? & \\ \hline
+     & Apakah Anda mengalami \textit{crash}, \textit{forced close},  & \\
+     6 & atau kendala lain saat menggunakan aplikasi & 6 menjawab Tidak \\
+     & Rugby Indonesia terbaru? & \\ \hline
+    \end{tabular}
+    \label{tab:user-acceptance-test}
+\end{table}
