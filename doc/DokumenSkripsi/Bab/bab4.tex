@@ -6,7 +6,7 @@ Perancangan kelas diagram dilakukan setelah tahap analisis sistem kini, analisis
 
 \begin{figure} [H]
     \centering
-    \includegraphics[scale=0.75]{Gambar/Rugby Indonesia UML Class Diagram Rev V1.png}
+    \includegraphics[scale=0.75]{Gambar/Rugby Indonesia UML Class Diagram - UML Class DIagram Rev1.png}
     \caption{Diagram Kelas Rugby Indonesia}
     \label{fig:rugby-indonesia-class-diagram}
 \end{figure}
@@ -50,6 +50,7 @@ Deskripsi perancangan dari tiap kelas adalah sebagai berikut:
         \item Method useEffect: melakukan pengambilan data yang berasal dari sistem eksternal.
         \item Method fetchData: melakukan pengambilan data dari url menggunakan axios.
         \item Method openModal: menampilkan isi konten menggunakan modal.
+        \item Method closeModal: memberikan \textit{default value} pada setIsOpen dan setSelectedItemIndex ketika modal ditutup.
     \end{itemize}
 
     \item Kelas TeammatePhotosPage
@@ -105,14 +106,14 @@ Halaman ini hanya akan menampilkan detail dari berita yang ingin dibaca lebih la
      \centering
      \begin{subfigure}[b]{0.3\textwidth}
         \centering
-        \includegraphics[scale=0.225]{Gambar/Teammate_Photos UI Dev.png}
+        \includegraphics[scale=0.225]{Gambar/Teammate_Photos UI Dev Rev1.png}
         \caption{Perancangan Antarmuka Halaman Teammate Photos}
         \label{fig:teammate-photos-ui-dev}
      \end{subfigure}
      \hspace*{0.5in}
      \begin{subfigure}[b]{0.3\textwidth}
         \centering
-        \includegraphics[scale=0.225]{Gambar/Select_Frame UI Dev.png}
+        \includegraphics[scale=0.225]{Gambar/Select_Frame_UI_Dev Rev2.png}
         \caption{Perancangan Antarmuka Halaman Pemilihan Frame}
         \label{fig:select-frame-ui-dev}
      \end{subfigure}
@@ -126,7 +127,7 @@ Pada halaman Teammate Photos, informasi yang akan ditampilkan oleh halaman ini b
 
 \subsection{Perancangan Antarmuka Halaman Frame}
 
-Halaman ini hanya akan menampilkan pilihan frame yang dapat digunakan oleh pengguna Rugby Indonesia setelah pengguna melakukan pengambilan gambar menggunakan kamera atau melakukan pemilihan gambar yang berasal dari galeri. Gambar dari halaman ini dapat dilihat pada Gambar \ref{fig:select-frame-ui-dev}, di mana pada gambar tersebut terdapat tombol ``CLOSE'' apabila pengguna tidak jadi melakukan pengunggahan gambar dan juga pilihan frame yang tersedia.
+Halaman ini hanya akan menampilkan pilihan frame yang dapat digunakan oleh pengguna Rugby Indonesia setelah pengguna melakukan pengambilan gambar menggunakan kamera atau melakukan pemilihan gambar yang berasal dari galeri. Gambar dari halaman ini dapat dilihat pada Gambar \ref{fig:select-frame-ui-dev}, di mana pada gambar tersebut terdapat tombol ``CANCEL'' apabila pengguna tidak jadi melakukan pengunggahan gambar dan juga pilihan frame yang tersedia.
 
 \section{Perancangan Struktur HTML}
 Struktur HTML dari setiap halaman memiliki struktur yang sama, di mana pada setiap halaman terdapat header dan juga content. Header dan content yang terdapat pada struktur ini memiliki penjelasan sebagai berikut:
